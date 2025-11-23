@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Optimised Approach
 int removeElement(vector<int>& nums, int val) {
     int k = 0;  // Pointer to position to place next non-val element
     for (int i = 0; i < nums.size(); i++) {
@@ -15,7 +16,7 @@ int removeElement(vector<int>& nums, int val) {
     return k;
 }
 
-// Another approach
+// Bruteforce Approach
 // int removeElement(vector<int>& nums, int val) {
 //     int ans = 0;  // Count of elements not equal to val
 //     for (int i = 0; i < nums.size(); i++) {

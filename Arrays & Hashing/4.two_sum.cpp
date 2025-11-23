@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Optimised Approach
 vector<int> twoSum(vector<int>& nums, int target) {
     unordered_map<int, int> countMap;  //<value,index>
     // loop through the vector and store all the index
@@ -18,7 +19,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
     return {0, 0};
 }
 
-// Second solution
+// Bruteforce Approach
 // vector<int> twoSum(vector<int>& nums, int target) {
 //     vector<int> ans;
 //     for (int i = 0; i < nums.size(); i++) {

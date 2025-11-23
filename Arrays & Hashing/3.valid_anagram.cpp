@@ -21,8 +21,7 @@ bool isAnagram(string s, string t) {
     return true;  // all counts are zero
 }
 
-// second solution
-
+// Another Approach
 // bool isAnagram(string s, string t) {
 //     // Sort both the string alphabetically and then compare
 //     sort(s.begin(), s.end());
