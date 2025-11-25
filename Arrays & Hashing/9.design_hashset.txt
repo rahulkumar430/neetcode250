@@ -1,4 +1,4 @@
-Design hashset
+Design Hashset
 
 Difficulty Level : EASY
 
