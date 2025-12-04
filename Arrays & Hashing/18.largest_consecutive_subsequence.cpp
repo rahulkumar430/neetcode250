@@ -3,6 +3,41 @@ using namespace std;
 
 class Solution {
    public:
+    // Bruteforce Approach
+    // int longestConsecutive(vector<int>& nums) {
+    //     int n = nums.size();
+    //     if (n == 0) return 0;  // Edge case: empty input
+
+    //     int max_streak = 0;  // Track longest streak found
+
+    //     // Iterate over each number to try building a consecutive streak
+    //     for (int i = 0; i < n; i++) {
+    //         int current = nums[i], streak_len = 1;
+
+    //         // Attempt to extend the streak by repeatedly looking for current + 1
+    //         while (true) {
+    //             bool found_next = false;
+
+    //             // Scan entire array to find if next consecutive number exists
+    //             for (int j = 0; j < n; j++) {
+    //                 if (nums[j] == current + 1) {
+    //                     found_next = true;
+    //                     current++;     // Move to next number in sequence
+    //                     streak_len++;  // Increment streak length
+    //                     break;         // Stop scanning after found
+    //                 }
+    //             }
+
+    //             if (!found_next) break;  // No further extension possible, exit
+    //         }
+
+    //         max_streak = max(max_streak, streak_len);  // Update global max streak length
+    //     }
+
+    //     return max_streak;
+    // }
+
+    // Optimised Solution O(N) time complexity, worst case O(N^2)
     int longestConsecutive(vector<int>& nums) {
         // Hash set to allow O(1)-average lookups for existence checks
         unordered_set<int> s;
