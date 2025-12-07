@@ -27,6 +27,7 @@ class Solution {
     // }
 
     // Boyer - Moore Voting Algorithm(O(n) time and O(1) space complexity)
+    // Core idea : Any element that appears more than ⌊n/3⌋ times must be among at most 2 candidates.
     // vector<int> majorityElement(vector<int>& nums) {
     //     int n = nums.size();
     //     int num1 = -1, num2 = -1;  // Two candidate numbers
