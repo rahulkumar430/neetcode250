@@ -61,7 +61,6 @@ class Solution {
 
     bool validPalindrome(string s) {
         int l = 0, r = (int)s.size() - 1;  // Two pointers from both ends
-        int cnt = 1;                       // Number of deletions allowed (at most 1)
 
         while (l < r) {
             if (s[l] == s[r]) {
@@ -70,8 +69,6 @@ class Solution {
                 r--;
             } else {
                 // First mismatch encountered
-                if (cnt == 0) return false;  // Already used our allowed deletion
-
                 // Option 1: skip character at l → check s[l+1..r]
                 // Option 2: skip character at r → check s[l..r-1]
                 // If either range is a palindrome, we can fix by deleting at most one char
