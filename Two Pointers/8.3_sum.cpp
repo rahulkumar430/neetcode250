@@ -52,7 +52,7 @@ class Solution {
             int l = i + 1;
             int r = nums.size() - 1;
 
-            // Search for valid pairs
+            // Search for valid pairs using twoSum method using 2 pointers
             while (l < r) {
                 int sum = nums[i] + nums[l] + nums[r];
 
@@ -72,7 +72,8 @@ class Solution {
                     l++;
                     r--;
 
-                    // Skip duplicate values for the second element
+                    // Skip duplicate values for the second element(one can do for either l or r)
+                    // e.g. instead of l++, you can validate duplicates b y doing r-- and slightly changing the while condition to (l < r && nums[r] == nums[r + 1])
                     while (l < r && nums[l] == nums[l - 1]) {
                         l++;
                     }
