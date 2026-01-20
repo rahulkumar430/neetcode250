@@ -83,6 +83,54 @@ class Solution {
 
         return res;
     }
+
+    // Optimised approach using hashmap: O(N^2) Time complexity
+    //  vector<vector<int>> threeSum(vector<int>& nums) {
+    //      // Sort the array for duplicate handling and ordered triplets
+    //      sort(nums.begin(), nums.end());
+
+    //     // Frequency map to track availability of numbers
+    //     unordered_map<int, int> count;
+    //     for (int num : nums) {
+    //         count[num]++;
+    //     }
+
+    //     vector<vector<int>> res;
+
+    //     // Fix the first element
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         // Use nums[i], so reduce its count
+    //         count[nums[i]]--;
+
+    //         // Skip duplicate values for the first element
+    //         if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+    //         // Fix the second element
+    //         for (int j = i + 1; j < nums.size(); j++) {
+    //             // Use nums[j], so reduce its count
+    //             count[nums[j]]--;
+
+    //             // Skip duplicate values for the second element
+    //             if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+
+    //             // Compute the required third value
+    //             int target = -(nums[i] + nums[j]);
+
+    //             // If the third value exists and is available,
+    //             // we found a valid triplet
+    //             if (count[target] > 0) {
+    //                 res.push_back({nums[i], nums[j], target});
+    //             }
+    //         }
+
+    //         // Restore counts for nums[j] before moving to next i
+    //         for (int j = i + 1; j < nums.size(); j++) {
+    //             count[nums[j]]++;
+    //         }
+    //     }
+
+    //     return res;
+    // }
 };
 
 int main() {
