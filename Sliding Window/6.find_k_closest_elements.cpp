@@ -29,7 +29,6 @@ class Solution {
         int idx = lower_bound(arr.begin(), arr.end(), x) - arr.begin();
 
         // Adjust idx to point to the closest element to x, Compare arr[idx] and arr[idx - 1] if both are valid
-
         if (idx > 0 && (idx == n || abs(arr[idx] - x) >= abs(arr[idx - 1] - x))) {
             idx--;
         }
