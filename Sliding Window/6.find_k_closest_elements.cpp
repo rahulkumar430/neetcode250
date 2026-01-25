@@ -20,7 +20,7 @@ class Solution {
     //     return result;
     // }
 
-    // Optimised Approach using binary lower bound search + two pointers
+    // Optimised Approach using binary lower bound search + two pointers(Sliding Window)
     // Time Complexity : O(log N + k log k)
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
         int n = arr.size();
