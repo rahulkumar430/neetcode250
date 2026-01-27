@@ -1,0 +1,47 @@
+Sliding Window Maximum
+
+Difficulty Level : HARD
+
+You are given an array of integers nums and an integer k. There is a sliding window of size k that starts at the left edge of the array. The window slides one position to the right until it reaches the right edge of the array.
+
+Return a list that contains the maximum element in the window at each step.
+
+Example 1:
+
+Input: nums = [1,2,1,0,4,2,6], k = 3
+
+Output: [2,2,4,4,6]
+
+Explanation: 
+Window position            Max
+---------------           -----
+[1  2  1] 0  4  2  6        2
+ 1 [2  1  0] 4  2  6        2
+ 1  2 [1  0  4] 2  6        4
+ 1  2  1 [0  4  2] 6        4
+ 1  2  1  0 [4  2  6]       6
+Constraints:
+
+1 <= nums.length <= 1000
+-10,000 <= nums[i] <= 10,000
+1 <= k <= nums.length
+
+
+Recommended Time & Space Complexity
+You should aim for a solution as good or better than O(nlogn) time and O(n) space, where n is the size of the input array.
+
+
+Hint 1
+A brute force solution would involve iterating through each window of size k and finding the maximum element within the window by iterating through it. This would be an O(n * k) solution. Can you think of a better way? Maybe think of a data structure that tells the current maximum element of the window in O(1) time.
+
+
+Hint 2
+A heap is the best data structure to use when dealing with maximum or minimum values and it takes O(1) time to get the max or min value. Here, we use a max-heap. But what should we do if the current maximum element is no longer part of the window? Can you think of a different way of adding values to the max-heap?
+
+
+Hint 3
+We process each window by adding elements to the heap along with their indices to track whether the maximum value is still within the current window. As we move from one window to the next, an element may go out of the window but still remain in the max-heap. Is there a way to handle this situation efficiently?
+
+
+Hint 4
+We can ignore those elements that are no longer part of the current window, except when the maximum value is outside the window. In that case, we remove elements from the max-heap until the maximum value belongs to the current window. Why? Because those elements will be eventually removed when the maximum element goes out of the window.
