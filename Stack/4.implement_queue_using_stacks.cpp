@@ -143,3 +143,8 @@ int main() {
 
     return 0;
 }
+
+/*
+IMPORTANT NOTE :
+“Amortisation works for queue using stacks because elements are reversed once and never touched again. For stack using queues, every push changes the top, forcing a full rearrangement, so work cannot be reused.”
+*/
