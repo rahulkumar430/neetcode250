@@ -127,7 +127,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             // While the current bar is smaller than the bar at stack top,
             // the stack top bar cannot extend further to the right
-            while (!st.empty() && heights[st.top()] > heights[i]) {
+            while (!st.empty() && heights[st.top()] >= heights[i]) {
                 // Height of the rectangle is the height of the popped bar
                 int height = heights[st.top()];
                 st.pop();
