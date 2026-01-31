@@ -1,0 +1,54 @@
+Search a 2D Matrix
+
+Difficulty Level : MEDIUM
+
+You are given an m x n 2-D integer array matrix and an integer target.
+
+Each row in matrix is sorted in non-decreasing order.
+The first integer of every row is greater than the last integer of the previous row.
+Return true if target exists within matrix or false otherwise.
+
+Can you write a solution that runs in O(log(m * n)) time?
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/7ca61f56-00d4-4fa0-26cf-56809028ac00/public
+
+Input: matrix = [[1,2,4,8],[10,11,12,13],[14,20,30,40]], target = 10
+
+Output: true
+Example 2:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/f25f2085-ce04-4447-9cee-f0a66c32a300/public
+
+Input: matrix = [[1,2,4,8],[10,11,12,13],[14,20,30,40]], target = 15
+
+Output: false
+Constraints:
+
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 100
+-10000 <= matrix[i][j], target <= 10000
+
+Topics
+Array, Binary Search, Matrix
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(log(m * n)) time and O(1) space, where m is the number of rows and n is the number of columns in the matrix.
+
+
+Hint 1
+A brute force solution would be to do a linear search on the matrix. This would be an O(m * n) solution. Can you think of a better way? Maybe an efficient searching algorithm, as the given matrix is sorted.
+
+
+Hint 2
+We can use binary search, which is particularly effective when we visualize a row as a range of numbers, [x, y] where x is the first cell and y is the last cell of a row. Using this representation, it becomes straightforward to check if the target value falls within the range. How can you use binary search to solve the problem?
+
+
+Hint 3
+We perform a binary search on the rows to identify the row in which the target value might fall. This operation takes O(logm) time, where m is the number of rows. Now, when we find the potential row, can you find the best way to search the target in that row? The sorted nature of each row is the hint.
+
+
+Hint 4
+Once we identify the potential row where the target might exist, we can perform a binary search on that row which acts as a one dimensional array. It takes O(logn) time, where n is the number of columns in the row.
