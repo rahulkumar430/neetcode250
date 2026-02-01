@@ -50,8 +50,10 @@ class Solution {
 
 int main() {
     Solution sol;
-    vector<int> nums = {1, 0, 1, 1, 1};
-    int target = 0;
+    vector<int> nums = {3, 4, 4, 5, 6, 1, 2, 2};
+    int target = 4;
+    // vector<int> nums = {1, 0, 1, 1, 1};
+    // int target = 0;
 
     cout << (sol.search(nums, target) ? "true" : "false") << endl;
 
