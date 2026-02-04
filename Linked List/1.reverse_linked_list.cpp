@@ -11,7 +11,7 @@ struct ListNode {
 
 class Solution {
    public:
-    // Time Complexity: O(N), Space Complexity: O(1)
+    // Iterative Method - Time Complexity: O(N), Space Complexity: O(1)
     ListNode* reverseList(ListNode* head) {
         ListNode* prev = nullptr;
         ListNode* curr = head;
@@ -23,6 +23,24 @@ class Solution {
             curr = nextNode;                  // move curr
         }
         return prev;
+    }
+
+    // Recursion method - Time Complexity: O(N), Space Complexity: O(N)
+    // Works by : reverse the rest, then fix the pointer for the current node
+    ListNode* reverseList(ListNode* head) {
+        // Base case: empty list OR single node
+        if (head == nullptr || head->next == nullptr) {
+            return head;
+        }
+
+        // Reverse the remaining list
+        ListNode* newHead = reverseList(head->next);
+
+        // Fix the current node
+        head->next->next = head;  // make next node point back to current
+        head->next = nullptr;     // break original link
+
+        return newHead;
     }
 };
 
