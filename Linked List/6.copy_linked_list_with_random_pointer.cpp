@@ -74,7 +74,14 @@ class Solution {
     //     }
 
     //     // STEP 2: Assign random pointers for copied nodes
-    //     // original.random->next gives copied random
+    //     // original.random->next gives copied random as they are interleaving
+    //     // If original node A.random → C,
+    //     // then copied node A' random should point C' => A'.random → C'
+    //     //
+    //     // Because of interleaving:
+    //     // A' is A->next
+    //     // C' is C->next so A->next->random = A->random->next
+
     //     curr = head;
     //     while (curr != nullptr) {
     //         // If original node has a random pointer
