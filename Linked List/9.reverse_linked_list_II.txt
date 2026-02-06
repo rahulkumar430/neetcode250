@@ -1,0 +1,29 @@
+Reverse Linked List II
+
+Difficulty Level : MEDIUM
+
+You are given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right (1-indexed), and return the reversed list.
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/f1a84528-91c2-4ac2-8b0f-ed6b57881400/public
+
+Input: head = [1,2,3,4,5], left = 1, right = 3
+
+Output: [3,2,1,4,5]
+Example 2:
+
+Input: head = [1,1], left = 1, right = 1
+
+Output: [1,1]
+Constraints:
+
+The number of nodes in the list is n.
+1 <= n <= 500.
+-500 <= Node.val <= 500
+1 <= left <= right <= n
+Follow up: Could you do it in one pass?
+
+
+Topics
+Linked List
