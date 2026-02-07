@@ -1,0 +1,62 @@
+LRU Cache
+
+Difficulty Level : MEDIUM
+
+Implement the Least Recently Used (LRU) cache class LRUCache. The class should support the following operations
+
+LRUCache(int capacity) Initialize the LRU cache of size capacity.
+int get(int key) Return the value corresponding to the key if the key exists, otherwise return -1.
+void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the introduction of the new pair causes the cache to exceed its capacity, remove the least recently used key.
+A key is considered used if a get or a put operation is called on it.
+
+Ensure that get and put each run in O(1) average time complexity.
+
+Example 1:
+
+Input:
+["LRUCache", [2], "put", [1, 10],  "get", [1], "put", [2, 20], "put", [3, 30], "get", [2], "get", [1]]
+
+Output:
+[null, null, 10, null, null, 20, -1]
+
+Explanation:
+LRUCache lRUCache = new LRUCache(2);
+lRUCache.put(1, 10);  // cache: {1=10}
+lRUCache.get(1);      // return 10
+lRUCache.put(2, 20);  // cache: {1=10, 2=20}
+lRUCache.put(3, 30);  // cache: {2=20, 3=30}, key=1 was evicted
+lRUCache.get(2);      // returns 20 
+lRUCache.get(1);      // return -1 (not found)
+Constraints:
+
+1 <= capacity <= 100
+0 <= key <= 1000
+0 <= value <= 1000
+
+
+
+Topics
+Hash Table, Linked List, Design, Doubly-Linked List
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(1) time for each put() and get() function call and an overall space of O(n), where n is the capacity of the LRU cache.
+
+
+Hint 1
+Can you think of a data structure for storing data in key-value pairs? Maybe a hash-based data structure with unique keys.
+
+
+Hint 2
+We can use a hash map which takes O(1) time to get and put the values. But, how can you deal with the least recently used to be removed criteria as a key is updated by the put() or recently used by the get() functions? Can you think of a data structure to store the order of values?
+
+
+Hint 3
+A brute-force solution would involve maintaining the order of key-value pairs in an array list, performing operations by iterating through the list to erase and insert these key-value pairs. However, this would result in an O(n) time complexity. Can you think of a data structure that allows removing and reinserting elements in O(1) time?
+
+
+Hint 4
+We can use a doubly-linked list, which allows us to remove a node from the list when we have the address of that node. Can you think of a way to store these addresses so that we can efficiently remove or update a key when needed?
+
+
+Hint 5
+We can use a doubly linked list where key-value pairs are stored as nodes, with the least recently used (LRU) node at the head and the most recently used (MRU) node at the tail. Whenever a key is accessed using get() or put(), we remove the corresponding node and reinsert it at the tail. When the cache reaches its capacity, we remove the LRU node from the head of the list. Additionally, we use a hash map to store each key and the corresponding address of its node, enabling efficient operations in O(1) time.

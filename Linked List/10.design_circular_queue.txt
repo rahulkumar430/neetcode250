@@ -42,4 +42,4 @@ At most 3000 calls will be made to enQueue, deQueue, Front, Rear, isEmpty, and i
 
 
 Topics
-Aray, Linked List, Design, Queue
+Array, Linked List, Design, Queue
