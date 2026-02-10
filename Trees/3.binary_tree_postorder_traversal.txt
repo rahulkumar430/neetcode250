@@ -1,8 +1,8 @@
-Binary Tree Preorder Traversal
+Binary Tree Postorder Traversal
 
 Difficulty Level : EASY
 
-You are given the root of a binary tree, return the preorder traversal of its nodes' values.
+You are given the root of a binary tree, return the postorder traversal of its nodes' values.
 
 Example 1:
 
@@ -10,14 +10,14 @@ https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/cbfdb2c1-2d7b-43e0-e6dc-426c904
 
 Input: root = [1,2,3,4,5,6,7]
 
-Output: [1,2,4,5,3,6,7]
+Output: [4,5,2,6,7,3,1]
 Example 2:
 
 https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/7509d2ed-c696-40f3-98a3-2f635893c100/public
 
 Input: root = [1,2,3,null,4,5,null]
 
-Output: [1,2,4,3,5]
+Output: [4,2,5,3,1]
 Example 3:
 
 Input: root = []
