@@ -1,0 +1,36 @@
+Delete Node in a BST
+
+Difficulty Level : MEDIUM
+
+You are given a root node reference of a BST and a key, delete the node with the given key in the BST, if present. Return the root node reference (possibly updated) of the BST.
+
+Basically, the deletion can be divided into two stages:
+
+Search for a node to remove.
+If the node is found, delete the node.
+Note: There can be multiple results after deleting the node, return any one of them.
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/afc740e5-2b07-40c6-49d9-dd2e46c9d800/public
+
+Input: root = [5,3,9,1,4], key = 3
+
+Output: [5,4,9,1]
+Explanation: Another valid answer is:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/e7357b33-02e5-474e-8a4d-31bc4cae8100/public
+
+Example 2:
+
+Input: root = [5,3,6,null,4,null,10,null,null,7], key = 3
+
+Output: [5,4,6,null,null,null,10,7]
+Constraints:
+
+0 <= The number of nodes in the tree <= 10,000.
+-100,000 <= key, Node.val <= 100,000
+All the values Node.val are unique.
+
+Topics
+Tree, Binary Search Tree, Binary Tree
