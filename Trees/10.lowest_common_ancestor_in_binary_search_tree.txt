@@ -30,7 +30,7 @@ p != q
 p and q will both exist in the BST.
 
 Topics
-Tree, Depth-First Search, Binary Tree, Binary Tree
+Tree, Depth-First Search, Binary Search Tree, Binary Tree
 
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(h) time and O(h) space, where h is the height of the given tree.
