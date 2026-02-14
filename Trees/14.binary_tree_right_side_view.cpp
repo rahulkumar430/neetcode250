@@ -84,7 +84,8 @@ class Solution {
     }
     // Recursive DFS Approach - Time Complexity : O(N), Space Complexity: O(H)
     //    private:
-    //     void dfs(TreeNode* node, int level, vector<int>& ans) {
+    //     vector<int> ans;
+    //     void dfs(TreeNode* node, int level) {
     //         if (!node) return;
 
     //         // If this level is visited for the first time,
@@ -93,16 +94,15 @@ class Solution {
     //             ans.push_back(node->val);
 
     //         // Visit right subtree first
-    //         dfs(node->right, level + 1, ans);
+    //         dfs(node->right, level + 1);
 
     //         // Then visit left subtree
-    //         dfs(node->left, level + 1, ans);
+    //         dfs(node->left, level + 1);
     //     }
 
     //    public:
     //     vector<int> rightSideView(TreeNode* root) {
-    //         vector<int> ans;
-    //         dfs(root, 0, ans);
+    //         dfs(root, 0);
     //         return ans;
     //     }
 };
