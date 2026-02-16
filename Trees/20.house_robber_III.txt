@@ -1,0 +1,36 @@
+House Robber III
+
+Difficulty Level : MEDIUM
+
+The thief has found himself a new place for his thievery again. There is only one entrance to this area, called root.
+
+In this new place, there are houses and each house has its only one parent house. All houses in this place form a binary tree. It will automatically contact the police if two directly-linked houses were broken.
+
+You are given the root of the binary tree, return the maximum amount of money the thief can rob without alerting the police.
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9cbe7429-7c26-4527-8e52-4209021b5300/public
+
+Input: root = [1,4,null,2,3,3]
+
+Output: 7
+Explanation: Maximum amount of money the thief can rob = 4 + 3 = 7
+
+Example 2:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/7fb5c7a2-ebd5-410f-c79f-5eddcace2600/public
+
+Input: root = [1,null,2,3,5,4,2]
+
+Output: 12
+Explanation: Maximum amount of money the thief can rob = 1 + 4 + 2 + 5 = 12
+
+Constraints:
+
+1 <= The number of nodes in the tree <= 10,000.
+0 <= Node.val <= 10,000
+
+
+Topics
+Dynamic Programming, Tree, Depth-First Search, Binary Tree
