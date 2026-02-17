@@ -1,0 +1,33 @@
+Delete Leaves With a Given Value
+
+Difficulty Level : MEDIUM
+
+You are given a binary tree root and an integer target, delete all the leaf nodes with value target.
+
+Note that once you delete a leaf node with value target, if its parent node becomes a leaf node and has the value target, it should also be deleted (you need to continue doing that until you cannot).
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/5df29eb5-b59a-4dab-0c25-1dfa700a7900/public
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/84f34817-4de0-4b2e-2b85-8fc076ea4e00/public
+
+Input: root = [1,2,3,5,2,2,5], target = 2
+
+Output: [1,2,3,5,null,null,5]
+Example 2:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/5b6b4e50-d556-4442-e612-9c0018ae0c00/public
+
+Input: root = [3,null,3,3], target = 3
+
+Output: []
+Explanation: The output is an empty tree after removing all the nodes with value 3.
+
+Constraints:
+
+1 <= number of nodes in the tree <= 3000
+1 <= Node.val, target <= 1000
+
+
+Topics
+Tree, Depth-First Search, Binary Tree
