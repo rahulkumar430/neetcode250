@@ -1,0 +1,60 @@
+Design Twitter
+
+Difficulty Level : MEDIUM
+
+Implement a simplified version of Twitter which allows users to post tweets, follow/unfollow each other, and view the 10 most recent tweets within their own news feed.
+
+Users and tweets are uniquely identified by their IDs (integers).
+
+Implement the following methods:
+
+Twitter() Initializes the twitter object.
+void postTweet(int userId, int tweetId) Publish a new tweet with ID tweetId by the user userId. You may assume that each tweetId is unique.
+List<Integer> getNewsFeed(int userId) Fetches at most the 10 most recent tweet IDs in the user's news feed. Each item must be posted by users who the user is following or by the user themself. Tweets IDs should be ordered from most recent to least recent.
+void follow(int followerId, int followeeId) The user with ID followerId follows the user with ID followeeId.
+void unfollow(int followerId, int followeeId) The user with ID followerId unfollows the user with ID followeeId.
+Example 1:
+
+Input:
+["Twitter", "postTweet", [1, 10], "postTweet", [2, 20], "getNewsFeed", [1], "getNewsFeed", [2], "follow", [1, 2], "getNewsFeed", [1], "getNewsFeed", [2], "unfollow", [1, 2], "getNewsFeed", [1]]
+
+Output:
+[null, null, null, [10], [20], null, [20, 10], [20], null, [10]]
+
+Explanation:
+Twitter twitter = new Twitter();
+twitter.postTweet(1, 10); // User 1 posts a new tweet with id = 10.
+twitter.postTweet(2, 20); // User 2 posts a new tweet with id = 20.
+twitter.getNewsFeed(1);   // User 1's news feed should only contain their own tweets -> [10].
+twitter.getNewsFeed(2);   // User 2's news feed should only contain their own tweets -> [20].
+twitter.follow(1, 2);     // User 1 follows user 2.
+twitter.getNewsFeed(1);   // User 1's news feed should contain both tweets from user 1 and user 2 -> [20, 10].
+twitter.getNewsFeed(2);   // User 2's news feed should still only contain their own tweets -> [20].
+twitter.unfollow(1, 2);   // User 1 unfollows user 2.
+twitter.getNewsFeed(1);   // User 1's news feed should only contain their own tweets -> [10].
+Constraints:
+
+1 <= userId, followerId, followeeId <= 100
+0 <= tweetId <= 1000
+
+Topics
+Hash table, Linked List, Design, Heap (Priority Queue)
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(nlogn) time for each getNewsFeed() function call, O(1) time for the remaining methods, and O((N * m) + (N * M) + n) space, where n is the number of followeeIds associated with the userId, m is the maximum number of tweets by any user, N is the total number of userIds, and M is the maximum number of followees for any user.
+
+
+Hint 1
+Can you think of a data structure to store all the information, such as userIds and corresponding followeeIds, or userIds and their tweets? Maybe you should think of a hash data structure in terms of key-value pairs. Also, can you think of a way to determine that a tweet was posted before another tweet?
+
+
+Hint 2
+We use a hash map followMap to store userIds and their unique followeeIds as a hash set. Another hash map, tweetMap, stores userIds and their tweets as a list of (count, tweetId) pairs. A counter count, incremented with each tweet, tracks the order of tweets. The variable count is helpful in distinguishing the time of tweets from two users. This way of storing data makes the functions follow(), unfollow(), and postTweet() run in O(1). Can you think of a way to implement getNewsFeed()? Maybe consider a brute force approach and try to optimize it.
+
+
+Hint 3
+A naive solution would involve taking the tweets of the userId and its followeeIds into a list, sorting them in descending order based on their count values, and returning the top 10 tweets as the most recent ones. Can you think of a more efficient approach that avoids collecting all tweets and sorting? Perhaps consider a data structure and leverage the fact that each user's individual tweets list is already sorted.
+
+
+Hint 4
+We can use a Max-Heap to efficiently retrieve the top 10 most recent tweets. For each followee and the userId, we insert their most recent tweet from the tweetMap into the heap, along with the tweet's count and its index in the tweet list. This index is necessary because after processing a tweet, we can insert the next most recent tweet from the same user's list. By always pushing and popping tweets from the heap, we ensure that the 10 most recent tweets are retrieved without sorting all tweets.
