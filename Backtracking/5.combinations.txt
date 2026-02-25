@@ -26,4 +26,4 @@ Constraints:
 
 
 Topics
-Array, Backtracking
+Backtracking
