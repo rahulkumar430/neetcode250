@@ -20,7 +20,7 @@ class Solution {
         XOR = 1 ^ 2 = 3
         Sum += 3
     */
-    // Brute Force Approach using bit sking
+    // Brute Force Approach using bit masking
     // Time Complexity: O(n * 2^n), Space Complexity: O(1)
     // int subsetXORSum(vector<int>& nums) {
     //     int n = nums.size();
