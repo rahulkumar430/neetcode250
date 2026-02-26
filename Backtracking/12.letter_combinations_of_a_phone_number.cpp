@@ -19,11 +19,12 @@ class Solution {
         string dialLetter = dialLetters[digits[index] - '0'];
 
         for (int i = 0; i < dialLetter.length(); i++) {
-            currStr.push_back(dialLetter[i]);  // Choose
-
+            currStr.push_back(dialLetter[i]);       // Choose
             backtrack(digits, index + 1, currStr);  // Move to next digit
+            currStr.pop_back();                     // Undo
 
-            currStr.pop_back();  // Undo
+            // Above 3 lines or the below line, both works
+            // backtrack(digits, index + 1, currStr + dialLetter[i]);
         }
     }
 
