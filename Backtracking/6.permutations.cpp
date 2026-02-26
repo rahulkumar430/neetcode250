@@ -101,7 +101,7 @@ int main() {
     vector<vector<int>> ans = sol.permute(nums);
 
     for (const auto& row : ans) {
-        for (int val : row) std::cout << val << " ";
+        for (int val : row) cout << val << " ";
         cout << endl;
     }
 
