@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Optimised Approach using Hashmap & Sorting
+// Time Complexity: O(m * n log n), Space Complexity: O(m), m = number of strings & n = length of the longest string
 vector<vector<string>> groupAnagrams(vector<string>& strs) {
     unordered_map<string, vector<string>> anagramMap;
     // Loop through entire vector and by sorting the whole string and put the original string in the same sorted key

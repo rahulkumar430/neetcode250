@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(n), Space Complexity: O(n)
 bool isAnagram(string s, string t) {
     if (s.size() != t.size())
         return false;
@@ -21,6 +22,7 @@ bool isAnagram(string s, string t) {
     return true;  // all counts are zero
 }
 
+// Time Complexity: O(n log n), Space Complexity: O(1)
 // Another Approach
 // bool isAnagram(string s, string t) {
 //     // Sort both the string alphabetically and then compare

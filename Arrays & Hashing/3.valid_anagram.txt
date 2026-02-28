@@ -36,3 +36,5 @@ By the definition of the anagram, we can rearrange the characters. Does the orde
 Hint 3
 We can just consider maintaining the frequency of each character. We can do this by having two separate hash tables for the two strings. Then, we can check whether the frequency of each character in string s is equal to that in string t and vice versa.
 
+Topics
+Hash Table, String, Sorting

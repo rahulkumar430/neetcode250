@@ -28,6 +28,9 @@ Constraints:
 strs[i] is made up of lowercase English letters.
 
 
+Topics
+Array, Hash Table, String, Sorting
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(m * n) time and O(m) space, where m is the number of strings and n is the length of the longest string.
 

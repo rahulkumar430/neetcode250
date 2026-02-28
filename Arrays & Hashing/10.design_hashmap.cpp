@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Optimised Approach
+// Basic Array Approach
+// Time Complexity: O(1), Space Complexity: O(n)
 class MyHashMap {
    private:
     vector<int> hashMap;

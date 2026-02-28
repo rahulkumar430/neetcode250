@@ -1,30 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Optimised Approach
-class MyHashSet {
-   private:
-    vector<bool> table;
-
-   public:
-    MyHashSet() {
-        table.resize(1000001, false);  // initialize all to false
-    }
-
-    void add(int key) {
-        table[key] = true;
-    }
-
-    void remove(int key) {
-        table[key] = false;
-    }
-
-    bool contains(int key) {
-        return table[key];
-    }
-};
-
 // Bruteforce Approach
+// Time Complexity: O(n), Space Complexity: O(n)
 // class MyHashSet {
 //    public:
 //     vector<int> hashSet;
@@ -54,6 +32,30 @@ class MyHashSet {
 //         return it != hashSet.end();
 //     }
 // };
+
+// Optimised Approach
+// Time Complexity: O(1), Space Complexity: O(n)
+class MyHashSet {
+   private:
+    vector<bool> table;
+
+   public:
+    MyHashSet() {
+        table.resize(1000001, false);  // initialize all to false
+    }
+
+    void add(int key) {
+        table[key] = true;
+    }
+
+    void remove(int key) {
+        table[key] = false;
+    }
+
+    bool contains(int key) {
+        return table[key];
+    }
+};
 
 int main() {
     MyHashSet* obj = new MyHashSet();  // MyHashSet()

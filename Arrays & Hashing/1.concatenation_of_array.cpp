@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(n), Space Complexity: O(1) (in place modification)
 vector<int> getConcatenation(vector<int>& nums) {
     nums.insert(nums.end(), nums.begin(), nums.end());
     return nums;

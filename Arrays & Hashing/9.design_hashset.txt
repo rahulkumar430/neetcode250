@@ -30,3 +30,6 @@ Constraints:
 
 0 <= key <= 1,000,000
 At most 10,000 calls will be made to add, remove, and contains.
+
+Topics
+Array, Hash Table, Linked List, Design, Hash Function

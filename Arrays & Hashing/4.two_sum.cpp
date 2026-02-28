@@ -1,7 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Bruteforce Approach
+// Time Complexity: O(n^2), Space Complexity: O(1)
+// vector<int> twoSum(vector<int>& nums, int target) {
+//     vector<int> ans;
+//     for (int i = 0; i < nums.size(); i++) {
+//         for (int j = 0; j < nums.size(); j++) {
+//             if (nums[i] + nums[j] == target && i != j) {
+//                 ans.push_back(i);
+//                 ans.push_back(j);
+//                 return ans;
+//             }
+//         }
+//     }
+//     return {0, 0};
+// }
+
 // Optimised Approach
+// Time Complexity: O(n), Space Complexity: O(n)
 vector<int> twoSum(vector<int>& nums, int target) {
     unordered_map<int, int> countMap;  //<value,index>
     // loop through the vector and store all the index
@@ -18,21 +35,6 @@ vector<int> twoSum(vector<int>& nums, int target) {
     }
     return {0, 0};
 }
-
-// Bruteforce Approach
-// vector<int> twoSum(vector<int>& nums, int target) {
-//     vector<int> ans;
-//     for (int i = 0; i < nums.size(); i++) {
-//         for (int j = 0; j < nums.size(); j++) {
-//             if (nums[i] + nums[j] == target && i != j) {
-//                 ans.push_back(i);
-//                 ans.push_back(j);
-//                 return ans;
-//             }
-//         }
-//     }
-//     return {0, 0};
-// }
 
 int main() {
     vector<int> nums = {4, 5, 6};

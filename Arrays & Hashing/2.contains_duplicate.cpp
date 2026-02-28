@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(n), Space Complexity: O(n)
 bool hasDuplicate(vector<int>& nums) {
     map<int, int> numsCount = {};  // using map to loop and add the count of each number
     for (int i = 0; i < nums.size(); i++) {

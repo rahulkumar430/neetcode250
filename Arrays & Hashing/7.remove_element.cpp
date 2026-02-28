@@ -1,22 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Optimised Approach
-int removeElement(vector<int>& nums, int val) {
-    int k = 0;  // Pointer to position to place next non-val element
-    for (int i = 0; i < nums.size(); i++) {
-        if (nums[i] != val) {
-            // If current element is not val, move it to index k
-            nums[k++] = nums[i];
-        }
-        // If element is val, do nothing and skip it
-    }
-    // k now holds the count of elements not equal to val
-    // The first k elements of nums are the updated array without val
-    return k;
-}
-
 // Bruteforce Approach
+// Time Complexity: O(n^2), Space Complexity: O(1)
 // int removeElement(vector<int>& nums, int val) {
 //     int ans = 0;  // Count of elements not equal to val
 //     for (int i = 0; i < nums.size(); i++) {
@@ -42,6 +28,22 @@ int removeElement(vector<int>& nums, int val) {
 //     }
 //     return ans;
 // }
+
+// Optimised Approach
+// Time Complexity: O(n), Space Complexity: O(1)
+int removeElement(vector<int>& nums, int val) {
+    int k = 0;  // Pointer to position to place next non-val element
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != val) {
+            // If current element is not val, move it to index k
+            nums[k++] = nums[i];
+        }
+        // If element is val, do nothing and skip it
+    }
+    // k now holds the count of elements not equal to val
+    // The first k elements of nums are the updated array without val
+    return k;
+}
 
 int main() {
     vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};

@@ -31,3 +31,7 @@ Constraints:
 
 0 <= key, value <= 1,000,000
 At most 10,000 calls will be made to put, get, and remove.
+
+
+Topics
+Array, Hash Table, Linked List, Design, Hash Function

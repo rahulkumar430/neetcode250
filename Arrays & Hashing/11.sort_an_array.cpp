@@ -37,6 +37,8 @@ class Solution {
     }
 
     // Main QuickSort function recursively sorts subarrays
+    // Time complexity: O(n log n) on average, O(n^2) in worst case
+    // Space complexity: O(log n) on average due to recursion stack
     void quickSort(vector<int>& nums, int low, int high) {
         if (low < high) {
             int pi = partition(nums, low, high);  // Partition the array
@@ -47,6 +49,7 @@ class Solution {
     }
 
     // Selection sort implementation: find minimum, swap to front
+    // Time complexity: O(n^2), Space complexity: O(1)
     void selectionSort(vector<int>& nums, int n) {
         for (int i = 0; i < n - 1; i++) {
             int min_index = i;  // Index of minimum element in unsorted part
@@ -60,6 +63,7 @@ class Solution {
     }
 
     // Insertion sort implementation: build sorted section one element at a time
+    // Time complexity: O(n^2), Space complexity: O(1)
     void insertionSort(vector<int>& nums, int n) {
         for (int i = 1; i <= n - 1; i++) {
             int e = nums[i];
@@ -74,6 +78,7 @@ class Solution {
     }
 
     // Bubble sort implementation: repeatedly swap adjacent if out of order
+    // Time complexity: O(n^2), Space complexity: O(1)
     void bubbleSort(vector<int>& nums, int n) {
         // Outer loop controls passes
         for (int itr = 1; itr < n; itr++) {

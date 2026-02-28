@@ -32,3 +32,5 @@ Is there a way to check if an element is a duplicate without comparing it to eve
 Hint 3
 We can use a hash data structure like a hash set or hash map to store elements we've already seen. This will allow us to check if an element is a duplicate in constant time.
 
+Topics
+Array, Hash Table, Sorting
