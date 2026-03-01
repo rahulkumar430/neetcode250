@@ -1,0 +1,35 @@
+Extra Characters in a String
+
+Difficulty Level : MEDIUM
+
+You are given a string s and a dictionary of words dictionary. You have to break s into one or more non-overlapping substrings such that each substring is present in dictionary. There may be some extra characters in s which are not present in any of the substrings.
+
+Return the minimum number of extra characters left over if you break up s optimally.
+
+Note that the same word in the dictionary may be reused multiple times.
+
+Example 1:
+
+Input: s = "neetcodes", dictionary = ["neet","code","neetcode"]
+
+Output: 1
+Explanation: The optimal way is to break s into two substrings: "neet" from index 0 to 3 and "code" from index 4 to 7. There is one character which is at index 8.
+
+Example 2:
+
+Input: s = "neetcodde", dictionary = ["neet","code","neetcode"]
+
+Output: 5
+Explanation: The optimal way is to break s into one substring: "neet" from index 0 to 3. The characters at indices from 4 to 8 are extra.
+
+Constraints:
+
+1 <= s.length <= 50
+1 <= dictionary.length <= 50
+1 <= dictionary[i].length <= 50
+s and dictionary[i] consist of only lowercase English letters
+dictionary contains distinct words
+
+
+Topics
+Array, Hash Table, String, Dynamic Programming, Trie
