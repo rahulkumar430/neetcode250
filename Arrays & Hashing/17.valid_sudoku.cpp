@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // BRUTEFORCE APPROACH (O(n^2) time)
+    // Bruteforce Approach: Time Complexity: O(n^2), Space Complexity: O(n)
     // bool isValidSudoku(vector<vector<char>>& board) {
     //     vector<int> count(10, 0);
 
@@ -47,7 +47,7 @@ class Solution {
     //     return true;
     // }
 
-    // OPTIMISED APPROACH (O(n^2) time)
+    // Optimised Approach: Time Complexity: O(n^2), Space Complexity: O(n)
     // bool isValidSudoku(vector<vector<char>>& board) {
     //     int rows[9][10] = {0};
     //     int cols[9][10] = {0};
@@ -69,7 +69,7 @@ class Solution {
     //     return true;
     // }
 
-    // OPTIMISED APPROACH (O(n^2) time)
+    // Optimised Approach using hash sets: Time Complexity: O(n^2), Space Complexity: O(n)
     bool isValidSudoku(vector<vector<char>>& board) {
         vector<unordered_set<char>> row(9), col(9), square(9);
 
@@ -99,7 +99,7 @@ class Solution {
         return true;
     }
 
-    // OPTIMISED APPROACH (O(n^2) time) But faster than set/hashmaps
+    // Optimised Approach using bitmasks - Time Complexity: O(n^2), Space Complexity: O(n)
     // bool isValidSudoku(vector<vector<char>>& board) {
     //     int rows[9] = {}, cols[9] = {}, boxes[9] = {};
 

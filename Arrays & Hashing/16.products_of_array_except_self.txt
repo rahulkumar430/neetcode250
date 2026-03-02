@@ -24,6 +24,9 @@ Constraints:
 -20 <= nums[i] <= 20
 
 
+Topics
+Array, Prefix Sum
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(n) time and O(n) space, where n is the size of the input array.
 

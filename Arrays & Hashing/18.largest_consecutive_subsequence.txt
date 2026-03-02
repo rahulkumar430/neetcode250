@@ -26,6 +26,9 @@ Constraints:
 -10^9 <= nums[i] <= 10^9
 
 
+Topics
+Array, Hash Table, Union Find
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(n) time and O(n) space, where n is the size of the input array.
 

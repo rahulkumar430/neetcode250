@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Bruteforce Approach
+    // Bruteforce Approach - Time Complexity: O(n^2), Space Complexity: O(n)
     // int longestConsecutive(vector<int>& nums) {
     //     int n = nums.size();
     //     if (n == 0) return 0;  // Edge case: empty input
@@ -37,7 +37,7 @@ class Solution {
     //     return max_streak;
     // }
 
-    // Optimised Solution O(N) time complexity, worst case O(N^2)
+    // Optimised Solution - Time Complexity: O(n), Space Complexity: O(n)
     int longestConsecutive(vector<int>& nums) {
         // Hash set to allow O(1)-average lookups for existence checks
         unordered_set<int> s;
@@ -50,12 +50,14 @@ class Solution {
         // Iterate all numbers and only start counting from "sequence starts"
         for (int i = 0; i < (int)nums.size(); i++) {
             // A number is a start if there is no previous consecutive number (num - 1)
-            if (s.find(nums[i] - 1) == s.end()) {
+            if (!s.count(nums[i] - 1)) {
+                // if (s.find(nums[i] - 1) == s.end()) {    //instead of count, we can also use find to check existence
                 int current = nums[i];
                 int streak_len = 1;
 
                 // Count how long the streak continues: num, num+1, num+2, ...
-                while (s.find(current + 1) != s.end()) {
+                while (s.count(current + 1)) {
+                    // while (s.find(current + 1) != s.end()) {
                     current++;
                     streak_len++;
                 }

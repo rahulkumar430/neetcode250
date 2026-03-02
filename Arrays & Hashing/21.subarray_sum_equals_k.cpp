@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Bruteforce approach: O(N^3) time complexity : never use this as you'll get TLE error
+    // Bruteforce approach - Time Complexity: O(N^3), Space Complexity: O(1)
     // int subarraySum(vector<int>& nums, int k) {
     //     int cnt = 0;  // Count of subarrays whose sum equals k
     //     int n = nums.size();
@@ -27,7 +27,7 @@ class Solution {
     //     return cnt;
     // }
 
-    // Optimised from bruteforce but still O(N^2) time complexity
+    // Optimised Approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // Eliminates inner summation loop by using prefix sum accumulation - sum naturally builds nums[i..j] incrementally
     // int subarraySum(vector<int>& nums, int k) {
     //     int cnt = 0;
@@ -44,7 +44,8 @@ class Solution {
     //     }
     //     return cnt;
     // }
-    // Optimised with O(N) time complexity
+
+    // Most Optimal Approach - Time Complexity: O(N), Space Complexity: O(N)
     // subarray sum nums[i+1..j] = k exists when prefixSum[j] - prefixSum[i] = k
     int subarraySum(vector<int>& nums, int k) {
         int cnt = 0, curSum = 0;             // curSum: prefix sum till current index

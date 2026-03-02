@@ -50,6 +50,9 @@ board[i].length == 9
 board[i][j] is a digit 1-9 or '.'.
 
 
+Topics
+Array, Hash Table, Matrix
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(n^2) time and O(n^2) space, where n is the number of rows in the square grid.
 

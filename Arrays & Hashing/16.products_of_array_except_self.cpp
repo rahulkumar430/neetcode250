@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // BRUTEFORCE APPROACH (O(n^2) time) - Commented out
+    // Bruteforce Approach - Time Complexity: O(n^2), Space Complexity: O(n)
     // For each position i, multiply all other elements (skip nums[i])
     // vector<int> productExceptSelf(vector<int>& nums) {
     //     vector<int> ans;
@@ -19,7 +19,7 @@ class Solution {
     //     return ans;
     // }
 
-    // OPTIMIZED SOLUTION - O(n) time, O(1) extra space (excluding output array)
+    // OPtimised Approach - Time Complexity: O(n), Space Complexity: O(1)
     // Uses LEFT-to-RIGHT (prefix) and RIGHT-to-LEFT (suffix) product passes
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();

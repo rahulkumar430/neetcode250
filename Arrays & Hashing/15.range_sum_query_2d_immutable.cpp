@@ -6,7 +6,7 @@ class NumMatrix {
     // 2D vector to store prefix sums of the matrix
     vector<vector<int>> prefixSum;
 
-    // Constructor - builds the prefix sum matrix in O(m*n)
+    // Constructor - builds the prefix sum matrix - Time Complexity: O(m*n), Space Complexity: O(m*n)
     NumMatrix(vector<vector<int>>& matrix) {
         int rows = matrix.size();
         if (rows == 0) return;  // Handle empty input matrix
@@ -37,7 +37,7 @@ class NumMatrix {
     }
 
     // Returns the sum of elements inside the rectangle defined by (row1, col1) to (row2, col2)
-    // O(1) after prefix sums calculation
+    // Time Complexity: O(1) after prefix sums calculation
     int sumRegion(int row1, int col1, int row2, int col2) {
         int res = prefixSum[row2][col2];
 

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Naive approach : O(N log N) time complexity due to inbuilt sorting
+    // Naive approach : Time Complexity : O(N log N), Space Complexity : O(N)
     // vector<int> topKFrequent(vector<int>& nums, int k) {
     //     map<int, int> freqMap;
     //     vector<int> ans;
@@ -25,7 +25,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised Bucket Sort - O(n) time complexity
+    // Optimised Bucket Sort - Time Complexity: O(N), Space Complexity: O(N)
     vector<int> topKFrequent(vector<int>& nums, int k) {
         // Get frequency of each element
         unordered_map<int, int> freq;

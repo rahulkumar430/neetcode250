@@ -3,16 +3,13 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimised solution but not within O(1) space
+    // Naive Approach - Time Complexity: O(n), Space Complexity: O(n)
     // int firstMissingPositive(vector<int>& nums) {
     //     // Put all numbers into an unordered_set for O(1)-average membership checks
     //     unordered_set<int> us(nums.begin(), nums.end());
 
     //     // Find the maximum value in the array
-    //     int max = INT_MIN;
-    //     for (int num : nums) {
-    //         if (num >= max) max = num;
-    //     }
+    //     int max = *max_element(nums.begin(), nums.end());
 
     //     // Check from 1 up to max to find the first missing positive
     //     for (int i = 1; i <= max; i++) {
@@ -26,7 +23,7 @@ class Solution {
     //     return max > 0 ? ++max : 1;
     // }
 
-    // Time complexity: O(n) Space complexity : O(n)
+    // Optimised Appraoch - Time complexity: O(n) Space complexity : O(n)
     // int firstMissingPositive(vector<int>& nums) {
     //     int n = nums.size();
 
@@ -57,8 +54,7 @@ class Solution {
 
         // Place each number x (1 <= x <= n) at index x-1 if possible
         for (int i = 0; i < n; i++) {
-            // While nums[i] is in the range [1, n] and not in its correct position,
-            // swap it to its correct position.
+            // While nums[i] is in the range [1, n] and not in its correct position, swap it to its correct position.
             while (nums[i] >= 1 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
                 swap(nums[i], nums[nums[i] - 1]);
             }

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Naive Solution
+    // Naive Solution - Time Complexity: O(m) for encode and decode, Space Complexity: O(m+n)
     // string encode(vector<string>& strs) {
     //     string ans;
     //     string del = "é";  // Non ASCII Character
@@ -27,7 +27,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised Solution
+    // Optimised Solution - Time Complexity: O(m) for encode and decode, Space Complexity: O(m+n)
     string encode(vector<string>& strs) {
         string ans;
 
