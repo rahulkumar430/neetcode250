@@ -3,16 +3,12 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force approach-Time Complexity: O(N^2) Space Complexity: O(1)
+    // Brute force approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // bool containsNearbyDuplicate(vector<int>& nums, int k) {
     //     // Compare every element with every other element
     //     for (int i = 0; i < nums.size(); i++) {
     //         for (int j = i + 1; j < nums.size(); j++) {
-    //             /*
-    //             Check:
-    //             1. Values are equal
-    //             2. Index distance is within k
-    //             */
+    //             // Check: Values are equal & Index distance is within k
     //             if (nums[i] == nums[j] && abs(i - j) <= k) {
     //                 return true;
     //             }
@@ -23,7 +19,7 @@ class Solution {
     //     return false;
     // }
 
-    // Optimised approach-Time Complexity: O(N) Space Complexity: O(N)
+    // Optimised approach - Time Complexity: O(N), Space Complexity: O(N)
     // bool containsNearbyDuplicate(vector<int>& nums, int k) {
     //     // Map to store the last index of each number
     //     unordered_map<int, int> lastIndex;
@@ -45,7 +41,7 @@ class Solution {
     //     return false;
     // }
 
-    // Optimised approach-Time Complexity: O(N) Space Complexity: O(min(N,k))
+    // Optimised approach - Time Complexity: O(N), Space Complexity: O(min(N,k))
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         // Set to store elements in the current window
         unordered_set<int> window;

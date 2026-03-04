@@ -24,6 +24,9 @@ Constraints:
 0 <= k <= s.length
 
 
+Topics
+Hash Table, String, Sliding Window
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(n) time and O(m) space, where n is the length of the given string and m is the number of unique characters in the string.
 

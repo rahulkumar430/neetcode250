@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force approach: O(N^2) Time and O(min(N, unique_character_set_size)) Space complexity
+    // Brute force approach: Time Complexity: O(N^3), Space Complexity: O(min(N, character_set_size))
     // int characterReplacement(string s, int k) {
     //     // Stores the maximum valid substring length found
     //     int ans = 0;
@@ -38,8 +38,8 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised Approach : O(N) Time and O(1) Space complexity as max characters will be 26 and O(N*26) will be still O(N)
-    // int characterReplacement(std::string s, int k) {
+    // Optimised Approach : Time Complexity: O(26*n) → O(n), Space Complexity: O(Σ) → O(1) for 26 fixed alphabets
+    // int characterReplacement(string s, int k) {
     //     // Stores the maximum length of a valid substring
     //     int ans = 0;
 
@@ -82,9 +82,8 @@ class Solution {
     // }
 
     // Sliding Window (Optimal) solution
-    // Time Complexity : O(N)
-    // Space Complexity: O(Σ) → O(1) for fixed alphabet (e.g., uppercase letters)
-    int characterReplacement(std::string s, int k) {
+    // Time Complexity : O(N), Space Complexity: O(Σ) → O(1) for 26 fixed alphabets
+    int characterReplacement(string s, int k) {
         // Frequency map of characters in the current window
         unordered_map<char, int> count;
 
@@ -98,6 +97,7 @@ class Solution {
             count[s[r]]++;
 
             // Track the highest frequency seen in the window
+            // PS: maxf does not always represent the exact max frequency of the current window
             maxf = max(maxf, count[s[r]]);
 
             /*

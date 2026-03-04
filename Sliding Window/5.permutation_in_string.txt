@@ -25,6 +25,9 @@ Constraints:
 1 <= s1.length, s2.length <= 1000
 
 
+Topics
+Hash Table, Two Pointers, String, Sliding Window
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(n) time and O(1) space, where n is the maximum of the lengths of the two strings.
 

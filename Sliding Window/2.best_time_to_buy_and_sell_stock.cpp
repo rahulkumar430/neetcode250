@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force approach-Time Complexity: O(N^2) Space Complexity: O(1)
+    // Brute force approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // int maxProfit(vector<int>& prices) {
     //     // Stores the maximum profit found so far
     //     int profit = 0;
@@ -25,7 +25,7 @@ class Solution {
     //     return profit;
     // }
 
-    // Optimised Approach(2 pointers) - Time Complexity: O(N) Space Complexity: O(1)
+    // Optimised Approach(2 pointers) - Time Complexity: O(N), Space Complexity: O(1)
     // int maxProfit(vector<int>& prices) {
     //     // l -> pointer for the best buying day (minimum price so far)
     //     // r -> pointer for the current selling day
@@ -60,7 +60,7 @@ class Solution {
     //     return maxProfit;
     // }
 
-    // Optimised Approach - Time Complexity: O(N) Space Complexity: O(1)
+    // Optimised Approach - Time Complexity: O(N), Space Complexity: O(1)
     int maxProfit(vector<int>& prices) {
         // Stores the maximum profit found so far
         int profit = 0;

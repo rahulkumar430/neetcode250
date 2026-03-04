@@ -28,6 +28,9 @@ Constraints:
 0 <= prices[i] <= 100
 
 
+Topics
+Array, Dynamic Programming, Sliding Window
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(n) time and O(1) space, where n is the size of the input array.
 

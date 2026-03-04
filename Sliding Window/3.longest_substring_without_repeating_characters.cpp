@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force approach: O(N^3) Time and O(N) Space complexity
+    // Brute force approach: Time Complexity: O(N^3), Space Complexity: O(min(N, character_set_size))
     // int lengthOfLongestSubstring(string s) {
     //     int n = s.length();
     //     int ans = 0;
@@ -32,7 +32,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised approach: O(N) Time and O(min(N, character_set_size)) Space complexity
+    // Optimised approach: Time Complexity: O(N), Space Complexity: O(min(N, character_set_size))
     int lengthOfLongestSubstring(string s) {
         unordered_set<char> window;
         int l = 0, r = 0, ans = 0;
