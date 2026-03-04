@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force way : O(N^2) time complexity
+    // Brute force approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // int trap(vector<int>& height) {
     //     // Stores the total amount of trapped water
     //     int ans = 0;
@@ -30,7 +30,7 @@ class Solution {
     //     return ans;
     // }
 
-    // A little optimisation with space complexity O(N) and O(N) time complexity
+    // Optimised Approach - Time Complexity: O(N), Space Complexity: O(N)
     // int trap(vector<int>& height) {
     //     int ans = 0;
     //     int n = height.size();
@@ -62,7 +62,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Most Optimised Approach with space complexity O(1) and O(N) time complexity
+    // Most Optimal Approach - Time Complexity: O(N), Space Complexity: O(1)
     // int trap(vector<int>& height) {
     //     int ans = 0;
     //     int n = height.size();
@@ -116,7 +116,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Most Optimised Approach(with Code simplication from above answer) with space complexity O(1) and O(N) time complexity
+    // Most Optimal Approach(with Code simplication from above answer) - Time Complexity: O(N), Space Complexity: O(1)
     int trap(vector<int>& height) {
         int ans = 0;
         int n = height.size();

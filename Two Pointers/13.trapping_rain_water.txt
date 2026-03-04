@@ -19,6 +19,9 @@ Constraints:
 0 <= height[i] <= 1000
 
 
+Topics
+Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(n) time and O(n) space, where n is the size of the input array.
 

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach : O(N^3) Time complexity
+    // Brute-force approach - Time complexity: O(N^3), Space Complexity: O(1)
     // vector<vector<int>> threeSum(vector<int>& nums) {
     //     // Set to store unique triplets (automatically removes duplicates)
     //     set<vector<int>> res;
@@ -31,7 +31,7 @@ class Solution {
     //     return vector<vector<int>>(res.begin(), res.end());
     // }
 
-    // Optimised approach : O(N^2) Time complexity
+    // Optimised approach - Time complexity: O(N^2), Space Complexity: O(1)
     vector<vector<int>> threeSum(vector<int>& nums) {
         // Sort the array to enable two-pointer approach
         sort(nums.begin(), nums.end());
@@ -84,7 +84,7 @@ class Solution {
         return res;
     }
 
-    // Optimised approach using hashmap: O(N^2) Time complexity
+    // Optimised approach using hashmap - Time complexity: O(N^2), Space Complexity: O(N)
     //  vector<vector<int>> threeSum(vector<int>& nums) {
     //      // Sort the array for duplicate handling and ordered triplets
     //      sort(nums.begin(), nums.end());

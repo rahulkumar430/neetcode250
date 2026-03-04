@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Basic two pointers approach with taking O(N) Space
+    // Basic two pointers approach : Time Complexity: O(m+n), Space Complexity: O(m+n)
     // void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     //     vector<int> ans;     // Extra array to store merged result
     //     ans.reserve(m + n);  // Optional: avoid reallocations
@@ -35,7 +35,7 @@ class Solution {
     //     }
     // }
 
-    // Optimised approach with in place modification: O(m+n) time and O(1) space complexity
+    // Optimised approach with in place modification: Time Complexity: O(m+n), Space Complexity: O(1)
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         int i = m - 1;      // Last valid element in nums1
         int j = n - 1;      // Last element in nums2

@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution {
    public:
+    // Iterative Two Pointers Approach - Time Complexity: O(N), Space Complexity: O(N)
     string mergeAlternately(string word1, string word2) {
         int l1 = word1.length();  // Length of first string
         int l2 = word2.length();  // Length of second string
@@ -18,9 +19,10 @@ class Solution {
         return ans;  // Return merged string
     }
 
-    // string mergeAlternately(string word1, string word2) {
-    //     string ans;        // result string to store merged characters
-    //     int i = 0, j = 0;  // Pointers for word1 and word2
+    // Similar approach - Time Complexity: O(N), Space Complexity: O(N)
+    //  string mergeAlternately(string word1, string word2) {
+    //      string ans;        // result string to store merged characters
+    //      int i = 0, j = 0;  // Pointers for word1 and word2
 
     //     // Take characters alternately while both strings have remaining characters
     //     while (i < word1.size() && j < word2.size()) {

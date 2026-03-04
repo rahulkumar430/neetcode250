@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach : O(N^4) Time complexity
+    // Brute-force approach - Time complexity: O(N^4), Space Complexity: O(1)
     // vector<vector<int>> fourSum(vector<int>& nums, int target) {
     //     // Sort the array so that quadruplets are generated
     //     // in a consistent, non-decreasing order
@@ -40,7 +40,7 @@ class Solution {
     //     return vector<vector<int>>(res.begin(), res.end());
     // }
 
-    // Optimised approach : O(N^3) Time complexity -> Extending 3 sum solution
+    // Optimised approach -> Extending 3 sum solution - Time complexity: O(N^3), Space Complexity: O(1)
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         // Sort the array to:
         // 1. Enable two-pointer approach
@@ -105,7 +105,7 @@ class Solution {
         return res;
     }
 
-    // Optimised approach using Hashmap : O(N^3) Time complexity -> Extending 3 sum solution
+    // Optimised approach using Hashmap -> Extending 3 sum solution - Time complexity: O(N^3), Space Complexity: O(N)
     // vector<vector<int>> fourSum(vector<int>& nums, int target) {
     //     // Sort the array for:
     //     // 1. Consistent ordering of quadruplets

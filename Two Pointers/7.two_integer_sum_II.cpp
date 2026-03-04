@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach : O(N^2) Time and O(1) Space complexity
+    // Brute-force approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // vector<int> twoSum(vector<int>& numbers, int target) {
     //     // Iterate over each element in the array
     //     for (int i = 0; i < numbers.size(); i++) {
@@ -20,7 +20,8 @@ class Solution {
     //     // If no valid pair is found, return {-1, -1}
     //     return {-1, -1};
     // }
-    // Two pointers approach due non increasing nature of the vector : O(N) Time and O(1) Space complexity
+
+    // Two pointers approach due non increasing nature of the vector : Time Complexity: O(N), Space Complexity: O(1)
     vector<int> twoSum(vector<int>& numbers, int target) {
         // Pointer starting from the beginning of the array
         int i = 0;

@@ -29,6 +29,9 @@ Recommended Time & Space Complexity
 You should aim for a solution with O(n) time and O(1) space, where n is the size of the input array.
 
 
+Topics
+Array, Two Pointers, Binary Search
+
 Hint 1
 A brute force solution would be to check every pair of numbers in the array. This would be an O(n^2) solution. Can you think of a better way?
 

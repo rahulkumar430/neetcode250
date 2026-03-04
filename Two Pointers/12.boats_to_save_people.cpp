@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimised Approach - O(N log N) due to sorting, O(N) two-pointer scan
+    // Optimised Approach - Time Complexity: O(N log N) due to sorting, Space Complexity: O(1)
     // int numRescueBoats(vector<int>& people, int limit) {
     //     // Stores the minimum number of boats required
     //     int ans = 0;
@@ -57,7 +57,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Without redundancy of code
+    // Without redundancy of code - Time Complexity: O(N log N), Space Complexity: O(1)
     int numRescueBoats(vector<int>& people, int limit) {
         // Sort people by weight
         sort(people.begin(), people.end());

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force - O(N^2) Complexity
+    // Brute force - Time Complexity: O(N^2), Space Complexity: O(1)
     // int maxArea(vector<int>& heights) {
     //     // Stores the maximum amount of water found so far
     //     int ans = 0;
@@ -29,7 +29,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised Approach - O(N) Complexity
+    // Optimised Approach - Time Complexity: O(N), Space Complexity: O(1)
     int maxArea(vector<int>& heights) {
         // Stores the maximum amount of water found so far
         int ans = 0;

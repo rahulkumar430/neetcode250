@@ -37,6 +37,9 @@ Constraints:
 -10^5 <= nums[i] <= 10^5
 
 
+Topics
+Array, Two Pointers, Sorting
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(n^2) time and O(1) space, where n is the size of the input array.
 

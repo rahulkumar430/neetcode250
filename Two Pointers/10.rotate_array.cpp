@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Extra space basic approach
+    // Brute Force Approach - Time Complexity: O(N), Space Complexity: O(N)
     // void rotate(vector<int>& nums, int k) {
     //     int n = nums.size();
 
@@ -30,7 +30,7 @@ class Solution {
     //     nums = temp;
     // }
 
-    // In place using reverse
+    // In place using in built reverse function - Time Complexity: O(N), Space Complexity: O(1)
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
 
@@ -139,7 +139,7 @@ class Solution {
     //     }
     // }
 
-    // One liner using existing stl
+    // One liner using existing stl - Time Complexity: O(N), Space Complexity: O(1)
     // void rotate(vector<int>& nums, int k) {
     //     std::rotate(nums.begin(), nums.end() - (k % nums.size()), nums.end());
     // }

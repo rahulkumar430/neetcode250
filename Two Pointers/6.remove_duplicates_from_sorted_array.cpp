@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution {
    public:
+    // Optimised Two Pointers Approach - Time Complexity: O(N), Space Complexity: O(1)
     int removeDuplicates(vector<int>& nums) {
         int n = nums.size();
         if (n == 0) return 0;

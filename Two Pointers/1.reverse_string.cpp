@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Basic approach O(n) time and space complexity
+    // Naive Approach - Time Complexity: O(N), Space Complexity: O(N)
     // void reverseString(vector<char>& s) {
     //     vector<char> tmp;  // Temporary vector to store reversed characters
 
@@ -18,11 +18,12 @@ class Solution {
     //     }
     // }
 
-    // Built in function to use
+    // Built in function - Time Complexity: O(N), Space Complexity: O(1)
     //  void reverseString(vector<char>& s) {
     //      reverse(s.begin(), s.end());
     //  }
-    // Optmised O(N) Time and O(1) Space complexity with two pointers
+
+    // Optmised Two Pointers Approach - Time Complexity: O(N), Space Complexity: O(1)
     void reverseString(vector<char>& s) {
         int l = 0, r = s.size() - 1;  // l: left pointer, r: right pointer
 
