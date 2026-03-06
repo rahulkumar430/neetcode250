@@ -4,67 +4,71 @@ using namespace std;
 // DFS Approach - Time Complexity: O(R * C), Space Complexity: O(R * C) in worst case
 class Solution {
    public:
-    // DFS to mark all connected land as visited
-    void dfs(vector<vector<char>>& grid, int r, int c) {
+    // DFS to compute area of an island
+    void dfs(vector<vector<int>>& grid, int r, int c, int& area) {
         int rows = grid.size();
         int cols = grid[0].size();
 
         // Stop if out of bounds or water
-        if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == '0')
+        if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == 0)
             return;
 
-        // Mark current land as visited
-        grid[r][c] = '0';
+        // Mark cell as visited
+        grid[r][c] = 0;
+
+        // Increase island area
+        area++;
 
         // Explore 4 directions
-        dfs(grid, r + 1, c);
-        dfs(grid, r - 1, c);
-        dfs(grid, r, c + 1);
-        dfs(grid, r, c - 1);
+        dfs(grid, r + 1, c, area);
+        dfs(grid, r - 1, c, area);
+        dfs(grid, r, c + 1, area);
+        dfs(grid, r, c - 1, area);
     }
 
-    int numIslands(vector<vector<char>>& grid) {
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
         int rows = grid.size();
         int cols = grid[0].size();
-        int islands = 0;
+        int maxArea = 0;
 
         // Traverse the grid
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
-                // If land found → new island
-                if (grid[r][c] == '1') {
-                    islands++;
+                // Start DFS when land is found
+                if (grid[r][c] == 1) {
+                    int area = 0;
+                    dfs(grid, r, c, area);
 
-                    // Flood fill the entire island
-                    dfs(grid, r, c);
+                    // Update maximum island area
+                    maxArea = max(maxArea, area);
                 }
             }
         }
 
-        return islands;
+        return maxArea;
     }
 };
 
 // BFS Approach - Time Complexity: O(R * C), Space Complexity: O(R * C) in worst case
 // class Solution {
 //    public:
-//     int numIslands(vector<vector<char>>& grid) {
+//     int maxAreaOfIsland(vector<vector<int>>& grid) {
 //         int rows = grid.size();
 //         int cols = grid[0].size();
-//         int islands = 0;
+//         int maxArea = 0;
 
 //         // Directions for 4 neighbors
 //         vector<pair<int, int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
+//         // Traverse the grid
 //         for (int r = 0; r < rows; r++) {
 //             for (int c = 0; c < cols; c++) {
-//                 // Found new island
-//                 if (grid[r][c] == '1') {
-//                     islands++;
-
+//                 // Start BFS if land is found
+//                 if (grid[r][c] == 1) {
 //                     queue<pair<int, int>> q;
 //                     q.push({r, c});
-//                     grid[r][c] = '0';  // mark visited
+//                     grid[r][c] = 0;  // mark visited
+//                     int area = 1;    // current island area
 
 //                     // BFS to mark entire island
 //                     while (!q.empty()) {
@@ -76,29 +80,32 @@ class Solution {
 //                             int ny = y + dy;
 
 //                             // Check bounds and land
-//                             if (nx >= 0 && ny >= 0 && nx < rows && ny < cols && grid[nx][ny] == '1') {
-//                                 grid[nx][ny] = '0';  // mark visited
+//                             if (nx >= 0 && ny >= 0 && nx < rows && ny < cols && grid[nx][ny] == 1) {
+//                                 grid[nx][ny] = 0;  // mark visited
+//                                 area++;            // Increase island area
 //                                 q.push({nx, ny});
 //                             }
 //                         }
 //                     }
+//                     // Update maximum island area
+//                     maxArea = max(maxArea, area);
 //                 }
 //             }
 //         }
 
-//         return islands;
+//         return maxArea;
 //     }
 // };
 
 int main() {
-    vector<vector<char>> grid = {
-        {'0', '1', '1', '1', '0'},
-        {'0', '1', '0', '1', '0'},
-        {'1', '1', '0', '0', '0'},
-        {'0', '0', '0', '0', '0'}};
+    vector<vector<int>> grid = {
+        {0, 1, 1, 0, 1},
+        {1, 0, 1, 0, 1},
+        {0, 1, 1, 0, 1},
+        {0, 1, 0, 0, 1}};
 
     Solution sol;
-    cout << sol.numIslands(grid) << endl;
+    cout << sol.maxAreaOfIsland(grid) << endl;
 
     return 0;
 }
