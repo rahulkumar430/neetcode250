@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Sorting(Custom Comparator) - Time Complexity : O(N logN)
+    // Sorting(Custom Comparator) - Time Complexity : O(N logN), Space Complexity : O(N)
     // vector<int> findClosestElements(vector<int>& arr, int k, int x) {
     //     // Custom comparator
     //     sort(arr.begin(), arr.end(), [x](int a, int b) {

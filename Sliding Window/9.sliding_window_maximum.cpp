@@ -24,7 +24,8 @@ class Solution {
     //     return ans;
     // }
 
-    // Little optimised but still worst case Brute-force solution - Time Complexity: O(N * K)(worst case), Space Complexity: O(1)
+    // Little optimised but still worst case Brute-force solution
+    // Time Complexity: O(N * K)(worst case), Space Complexity: O(1)
     // vector<int> maxSlidingWindow(vector<int>& nums, int k) {
     //     vector<int> ans;
 
@@ -69,8 +70,7 @@ class Solution {
     // }
 
     // Sliding Window Maximum using Priority Queue (Max Heap)
-    // Time Complexity: O(N log N)
-    // Space Complexity: O(N)
+    // Time Complexity: O(N log N), Space Complexity: O(N)
     // vector<int> maxSlidingWindow(vector<int>& nums, int k) {
     //     vector<int> ans;
 
@@ -105,8 +105,7 @@ class Solution {
     // }
 
     // Optimal Sliding Window Maximum using Deque (You can also use a priority queue but this one is better)
-    // Time Complexity: O(N)
-    // Space Complexity: O(K)
+    // Time Complexity: O(N), Space Complexity: O(K)
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         vector<int> ans;
 

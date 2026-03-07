@@ -35,7 +35,7 @@ class Solution {
     // }
 
     // Brute-force solution for Minimum Window Substring
-    // Time Complexity: O(N^3)
+    // Time Complexity: O(N^3), Space Complexity: O(N)
     // string minWindow(string s, string t) {
     //     // Stores the final minimum window substring
     //     string ans = "";
@@ -64,7 +64,7 @@ class Solution {
     // }
 
     // Optimal Sliding Window approach for Minimum Window Substring
-    // Time Complexity: O(N)
+    // Time Complexity: O(N), Space Complexity: O(M), M = number of unique characters in t
     string minWindow(string s, string t) {
         // Edge case: if t is longer than s, no valid window exists
         if (t.length() > s.length()) return "";

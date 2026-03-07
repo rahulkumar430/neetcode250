@@ -27,6 +27,9 @@ Constraints:
 1 <= k <= nums.length
 
 
+Topics
+Array, Queue, Sliding Window, Heap (Priority Queue), Monotonic Queue
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(nlogn) time and O(n) space, where n is the size of the input array.
 
