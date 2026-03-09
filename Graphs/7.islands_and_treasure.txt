@@ -2,11 +2,7 @@ Islands and Treasure
 
 Difficulty Level : MEDIUM
 
-You are given a 
-m
-×
-n
-m×n 2D grid initialized with these three possible values:
+You are given a m×n 2D grid initialized with these three possible values:
 
 -1 - A water cell that can not be traversed.
 0 - A treasure chest.
