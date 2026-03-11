@@ -42,6 +42,9 @@ n == position.length == speed.length.
 All the values of position are unique.
 
 
+Topics
+Array, Stack, Sorting, Monotonic Stack
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(nlogn) time and O(n) space, where n is the size of the input array.
 

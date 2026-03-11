@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force solution - Time Complexity O(N^3), Space Complexity O(1)
+    // Brute force solution - Time Complexity: O(N^3), Space Complexity: O(1)
     // int largestRectangleArea(vector<int>& heights) {
     //     int ans = INT_MIN;  // Stores the maximum rectangle area found
 
@@ -30,7 +30,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Another Brute force approach - Time Complexity O(N^2), Space Complexity O(1)
+    // Another Brute force approach - Time Complexity: O(N^2), Space Complexity: O(1)
     // int largestRectangleArea(vector<int>& heights) {
     //     int n = heights.size();
     //     int maxArea = 0;
@@ -64,7 +64,7 @@ class Solution {
     //     return maxArea;
     // }
 
-    // Optmised approach - Time Complexity O(N), Space Complexity O(N)
+    // Optmised approach - Time Complexity: O(N), Space Complexity: O(N)
     // int largestRectangleArea(vector<int>& heights) {
     //     int n = heights.size();
     //     vector<int> leftLimit(n), rightLimit(n);
@@ -115,7 +115,7 @@ class Solution {
     //     return maxArea;
     // }
 
-    // Most Optimal way - Time Complexity O(N), Space Complexity O(N)
+    // Most Optimal way - Time Complexity: O(N), Space Complexity: O(N)
     int largestRectangleArea(vector<int>& heights) {
         int n = heights.size();
         stack<int> st;  // stores indices of bars

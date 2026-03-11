@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Brute Force way : Time Complexity for push O(1) & pop O(N)
+// Brute Force way : Time Complexity: O(1) for push, O(N) for pop, Space Complexity: O(N)
 // Total(N ops) O(N^2)
 // class FreqStack {
 //    private:
@@ -45,7 +45,7 @@ using namespace std;
 // };
 
 // Optimised Approach using Stack of stack & HashMap
-// Time Complexity O(1) for push and pop, Space Complexity is O(N)
+// Time Complexity: O(1) for push and pop, Space Complexity: O(N)
 class FreqStack {
    private:
     unordered_map<int, int> freq;          // val -> frequency

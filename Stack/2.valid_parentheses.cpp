@@ -3,8 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Stack-based solution
-    // Time & Space Complexity: O(N)
+    // Stack-based solution - Time Complexity: O(N), Space Complexity: O(N)
     bool isValid(string s) {
         stack<char> st;  // Stack to store opening brackets
 

@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal solution - Time complexity : O(NlogN), Space complexity : O(N)
+    // Optimal solution - Time complexity: O(NlogN), Space complexity: O(N)
     int carFleet(int target, vector<int>& position, vector<int>& speed) {
         int n = position.size();
 

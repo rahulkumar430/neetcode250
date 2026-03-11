@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force solution - Time complexity : O(N^2)
+    // Brute force solution - Time complexity: O(N^2), Space Complexity: O(N)
     // vector<int> dailyTemperatures(vector<int>& temperatures) {
     //     int n = temperatures.size();
 
@@ -27,7 +27,7 @@ class Solution {
     //     return ans;
     // }
 
-    // Optimised approach - Time complexity : O(N)
+    // Optimised approach - Time complexity: O(N), Space Complexity: O(N)
     vector<int> dailyTemperatures(vector<int>& temperatures) {
         int n = temperatures.size();
         vector<int> ans(n, 0);

@@ -2,6 +2,7 @@
 using namespace std;
 
 // Brute force solution using two stacks
+// Time Complexity: O(N) for pop and peek, O(1) for push and empty, Space Complexity: O(N)
 // class MyQueue {
 //    private:
 //     stack<int> s1;  // Maintains queue order (top = front)
@@ -74,6 +75,7 @@ using namespace std;
 // };
 
 // Amortized Solution using two stacks
+// Time Complexity: O(1) amortized for pop and peek, O(1) for push and empty, Space Complexity: O(N)
 class MyQueue {
    private:
     stack<int> s1;  // Used for push operations

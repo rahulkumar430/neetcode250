@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Optimal solution - Time complexity: O(N), Space Complexity: O(N)
 class Solution {
    public:
-    // Optimal solution - Time complexity : O(N)
     vector<int> asteroidCollision(vector<int>& asteroids) {
         vector<int> ans;  // Acts like a stack, you can take a stack and replace back with top and push_back with push and pop_back with pop, and the result will be same
 

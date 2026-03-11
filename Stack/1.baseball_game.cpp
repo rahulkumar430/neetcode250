@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Time & Space Complexity - O(N)
+    // Iterative approach - Time Complexity: O(N), Space Complexity: O(N)
     // int calPoints(vector<string>& operations) {
     //     vector<int> record;  // Stack to store scores
     //     int sum = 0;
@@ -34,7 +34,7 @@ class Solution {
     //     return sum;
     // }
 
-    // Time & Space Complexity - O(N)
+    // Stack-based solution - Time Complexity: O(N), Space Complexity: O(N)
     int calPoints(vector<string>& operations) {
         stack<int> st;  // Stack to store valid scores
         int sum = 0;

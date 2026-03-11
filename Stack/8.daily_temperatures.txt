@@ -22,6 +22,9 @@ Constraints:
 1 <= temperatures[i] <= 100
 
 
+Topics
+Array, Stack, Monotonic Stack
+
 Recommended Time & Space Complexity
 You should aim for a solution as good or better than O(n) time and O(n) space, where n is the size of the input array.
 

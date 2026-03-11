@@ -34,3 +34,7 @@ Constraints:
 0 <= val <= 1,000,000,000
 At most 20,000 calls will be made to push and pop.
 It is guaranteed that there will be at least one element in the stack before calling pop.
+
+
+Topics
+Hash Table, Stack, Design, Ordered Set

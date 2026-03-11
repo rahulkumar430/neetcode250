@@ -32,6 +32,9 @@ Constraints:
 pop, top and getMin will always be called on non-empty stacks.
 
 
+Topics
+Stack, Design
+
 Recommended Time & Space Complexity
 You should aim for a solution with O(1) time for each function call and O(n) space, where n is the maximum number of elements present in the stack.
 

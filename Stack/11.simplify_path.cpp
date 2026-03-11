@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal solution - Time complexity : O(N), Space complexity : O(N)
+    // Optimal solution - Time complexity: O(N), Space complexity: O(N)
     string simplifyPath(string path) {
         // You can either take stack or an vector will do the same thing
         stack<string> st;
@@ -51,7 +51,7 @@ class Solution {
         return ans.empty() ? "/" : ans;
     }
 
-    // Using path as stringstream
+    // Using path as stringstream - Time complexity: O(N), Space complexity: O(N)
     // string simplifyPath(string path) {
     //     stack<string> st;
     //     string token;

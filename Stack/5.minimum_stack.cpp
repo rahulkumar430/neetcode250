@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Optimised solution using two stacks
+// Optimised solution using two stacks - Time Complexity: O(1) for push, pop, top and getMin, Space Complexity: O(N)
 class MinStack {
    private:
     stack<int> s;     // Main stack (stores values)
@@ -68,7 +68,7 @@ class MinStack {
     // }
 };
 
-// Most optmised solution using only one stack
+// Optimal solution using only one stack - Time Complexity: O(1) for push, pop, top and getMin, Space Complexity: O(N)
 // Encode values smaller than the current minimum so that restore the previous minimum during pop
 // class MinStack {
 //    private:
@@ -87,8 +87,8 @@ class MinStack {
 //             s.push(val);
 //         } else {
 //             // Encode value
-//             // Since val < oldMin:(add val ob bth side and take oldMin to the lhs) 2 * val - oldMin < val
-//             // so 2 * cal - oldMin becomes the encoded value which will be small than the val(which is the new minValue)
+//             // Since val < oldMin:(add val on both side and take oldMin to the lhs) 2 * val - oldMin < val
+//             // so 2 * val - oldMin becomes the encoded value which will be small than the val(which is the new minValue)
 //             long long encoded = 2LL * val - minVal;
 //             s.push(encoded);
 //             minVal = val;

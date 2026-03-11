@@ -35,11 +35,13 @@ class StockSpanner {
         int span = 1;
         // Collapse all smaller or equal prices
         while (!st.empty() && st.top().first <= price) {
+            // Why we are adding the span of the top element to the current span instead of increasing by 1?
+            // Because the top element's span already includes the count of consecutive days with prices less than or equal to it, so we can skip all those days at once.
             span += st.top().second;
             st.pop();
         }
 
-        st.emplace(price, span);
+        st.emplace(price, span);  // st.push({price, span}) or st.push(make_pair(price, span));
         return span;
     }
 };

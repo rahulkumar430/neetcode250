@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Using 2 queue
+// Using 2 queue - Time Complexity: O(N) for push, O(1) for pop and top, O(1) for empty, Space Complexity: O(N)
 // class MyStack {
 //    private:
 //     queue<int> q1, q2;
@@ -68,7 +68,7 @@ using namespace std;
 //     }
 // };
 
-// Using 2 queue
+// Using 2 queue - Time Complexity: O(N) for push, O(1) for pop and top, O(1) for empty, Space Complexity: O(N)
 class MyStack {
    private:
     queue<int> q1, q2;
@@ -115,7 +115,7 @@ class MyStack {
     }
 };
 
-// Using one queue only
+// Using one queue only - Time Complexity: O(N) for push, O(1) for pop and top, O(1) for empty, Space Complexity: O(N)
 // class MyStack {
 //    private:
 //     queue<int> q;

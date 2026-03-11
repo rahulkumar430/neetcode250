@@ -3,7 +3,56 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal solution using single stack - Time complexity : O(N), Space complexity : O(N)
+    // Optimised approach using two stacks - Time complexity: O(N), Space complexity: O(N)
+    // string decodeString(string s) {
+    //     stack<int> countStack;      // stores repetition counts
+    //     stack<string> stringStack;  // stores previous strings
+
+    //     string curr = "";
+    //     int num = 0;
+
+    //     for (char ch : s) {
+    //         // Build the number (handles multi-digit numbers)
+    //         if (isdigit(ch)) {
+    //             num = num * 10 + (ch - '0');
+    //         }
+
+    //         // Opening bracket: save state
+    //         else if (ch == '[') {
+    //             countStack.push(num);
+    //             stringStack.push(curr);
+
+    //             // Reset for the substring inside brackets
+    //             num = 0;
+    //             curr = "";
+    //         }
+
+    //         // Closing bracket: decode
+    //         else if (ch == ']') {
+    //             int repeat = countStack.top();
+    //             countStack.pop();
+
+    //             string prev = stringStack.top();
+    //             stringStack.pop();
+
+    //             // Repeat current string
+    //             while (repeat--) {
+    //                 prev += curr;
+    //             }
+
+    //             curr = prev;
+    //         }
+
+    //         // Normal character
+    //         else {
+    //             curr += ch;
+    //         }
+    //     }
+
+    //     return curr;
+    // }
+
+    // Optimal solution using single stack - Time complexity: O(N), Space complexity: O(N)
     string decodeString(string s) {
         stack<string> st;
 
@@ -53,54 +102,6 @@ class Solution {
 
         return ans;
     }
-    // Optimised approach using two stacks - Time complexity : O(N), Space complexity : O(N)
-    // string decodeString(string s) {
-    //     stack<int> countStack;      // stores repetition counts
-    //     stack<string> stringStack;  // stores previous strings
-
-    //     string curr = "";
-    //     int num = 0;
-
-    //     for (char ch : s) {
-    //         // Build the number (handles multi-digit numbers)
-    //         if (isdigit(ch)) {
-    //             num = num * 10 + (ch - '0');
-    //         }
-
-    //         // Opening bracket: save state
-    //         else if (ch == '[') {
-    //             countStack.push(num);
-    //             stringStack.push(curr);
-
-    //             // Reset for the substring inside brackets
-    //             num = 0;
-    //             curr = "";
-    //         }
-
-    //         // Closing bracket: decode
-    //         else if (ch == ']') {
-    //             int repeat = countStack.top();
-    //             countStack.pop();
-
-    //             string prev = stringStack.top();
-    //             stringStack.pop();
-
-    //             // Repeat current string
-    //             while (repeat--) {
-    //                 prev += curr;
-    //             }
-
-    //             curr = prev;
-    //         }
-
-    //         // Normal character
-    //         else {
-    //             curr += ch;
-    //         }
-    //     }
-
-    //     return curr;
-    // }
 };
 
 int main() {

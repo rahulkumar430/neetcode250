@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Optimised solution using stack - Time Complexity: O(N), Space Complexity: O(N)
 class Solution {
    public:
-    // Optimised solution using stack - Time & Space Complexity: O(N)
     int evalRPN(vector<string>& tokens) {
         stack<int> st;
 
