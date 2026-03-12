@@ -2,7 +2,8 @@
 using namespace std;
 
 // DFS Approach using memoization to check if one course is a prerequisite of another
-// Time Complexity: O(V + E), Space Complexity: O(V + E), V = number of courses(nodes), E = number of prerequisites(edges)
+// Time Complexity: Time = O(V * (V + E)) ≈ O(V^3)
+// Space Complexity: O(V^2), V = number of courses(nodes), E = number of prerequisites(edges)
 // class Solution {
 //    public:
 //     bool dfs(int src, int target, vector<vector<int>>& graph, vector<vector<int>>& memo) {
@@ -42,7 +43,8 @@ using namespace std;
 // };
 
 // Topological Sort using BFS (Kahn’s Algorithm) to detect cycle in directed graph
-//  Time Complexity: O(V + E), Space Complexity: O(V + E), V = number of courses(nodes), E = number of prerequisites(edges)
+// Time Complexity: Time = O(V * (V + E)) ≈ O(V^3)
+// Space Complexity: O(V^2), V = number of courses(nodes), E = number of prerequisites(edges)
 class Solution {
    public:
     vector<bool> checkIfPrerequisite(int n, vector<vector<int>>& prerequisites, vector<vector<int>>& queries) {
