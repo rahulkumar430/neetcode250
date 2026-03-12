@@ -5,6 +5,7 @@ using namespace std;
 //  Time Complexity: O(V + E), Space Complexity: O(V + E), V = number of courses(nodes), E = number of prerequisites(edges)
 // class Solution {
 //    public:
+//     vector<int> ans;  // to store topological order of courses
 //     bool dfs(int node, vector<vector<int>>& graph, vector<int>& state) {
 //         // If node is currently being visited → cycle detected
 //         if (state[node] == 1)
@@ -21,11 +22,12 @@ using namespace std;
 //                 return false;
 //         }
 
-//         state[node] = 2;  // mark as fully processed
+//         state[node] = 2;      // mark as fully processed
+//         ans.push_back(node);  // add to topological order
 //         return true;
 //     }
 
-//     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+//     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
 //         vector<vector<int>> graph(numCourses);
 
 //         // Build adjacency list, you can also take a map instead of vector of vectors
@@ -37,10 +39,13 @@ using namespace std;
 
 //         for (int i = 0; i < numCourses; i++) {
 //             if (!dfs(i, graph, state))
-//                 return false;
+//                 return {};  // cycle detected, return empty order
 //         }
 
-//         return true;
+//         // Reverse the order to get correct topological sorting, Because we are adding courses to ans
+//         // after processing all their dependencies, so the order in ans is actually reverse of the required order.
+//         reverse(ans.begin(), ans.end());
+//         return ans;
 //     }
 // };
 
@@ -48,7 +53,8 @@ using namespace std;
 //  Time Complexity: O(V + E), Space Complexity: O(V + E), V = number of courses(nodes), E = number of prerequisites(edges)
 class Solution {
    public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<int> ans;
         // adjacency list: graph[a] contains courses dependent on 'a'
         vector<vector<int>> graph(numCourses);
 
@@ -78,6 +84,7 @@ class Solution {
         while (!q.empty()) {
             int curr = q.front();
             q.pop();
+            ans.push_back(curr);  // add course to topological order
 
             coursesTaken++;  // we can take this course
 
@@ -92,7 +99,7 @@ class Solution {
         }
 
         // If we processed all courses → no cycle
-        return coursesTaken == numCourses;
+        return coursesTaken == numCourses ? ans : vector<int>{};
     }
 };
 
@@ -101,7 +108,12 @@ int main() {
     int numCourses = 4;
 
     Solution sol;
-    cout << (sol.canFinish(numCourses, prerequisites) ? "true" : "false") << endl;
+    vector<int> ans = sol.findOrder(numCourses, prerequisites);
+
+    for (int course : ans) {
+        cout << course << " ";
+    }
+    cout << endl;
 
     return 0;
 }
