@@ -82,6 +82,40 @@ class Solution {
 //     }
 // };
 
+// Union-Find Approach - Time Complexity: O(E * α(V)) ≈ O(E), Space Complexity: O(V), V = number of vertices, E = number of edges
+// class Solution {
+//    public:
+//     int find(int x, vector<int>& parent) {
+//         if (parent[x] == x) return x;
+//         // Path compression optimization: directly connect x to its root parent to flatten the structure and speed up future finds
+//         return parent[x] = find(parent[x], parent);
+//     }
+
+//     int countComponents(int n, vector<vector<int>>& edges) {
+//         vector<int> parent(n);
+
+//         // Initially, each node is its own parent (representing separate sets)
+//         for (int i = 0; i < n; i++)
+//             parent[i] = i;
+
+//         int components = n;
+
+//         for (auto& e : edges) {
+//             int p1 = find(e[0], parent);
+//             int p2 = find(e[1], parent);
+
+//             // If p1 and p2 are in different sets, we can union them and reduce the components count by 1
+//             if (p1 != p2) {
+//                 parent[p1] = p2;
+//                 // Reduces the number of components by 1, because we are merging two separate components into one, so the total number of components decreases by one.
+//                 components--;
+//             }
+//         }
+
+//         return components;
+//     }
+// };
+
 int main() {
     int n = 5;
     vector<vector<int>> edges = {{0, 1}, {1, 2}, {3, 4}};

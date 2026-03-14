@@ -109,6 +109,45 @@ class Solution {
     }
 };
 
+// Union-Find Approach to detect cycle in undirected graph
+// Time Complexity: O(E * α(V)) ≈ O(E), Space Complexity: O(V)
+// V = number of courses(nodes), E = number of prerequisites(edges), α(V) ≈ constant (inverse Ackermann function)
+// class Solution {
+//    public:
+//     int find(int x, vector<int>& parent) {
+//         if (parent[x] == x)
+//             return x;
+//         // Path compression optimization: directly connect x to its root parent to flatten the structure and speed up future finds
+//         return parent[x] = find(parent[x], parent);
+//     }
+
+//     bool validTree(int n, vector<vector<int>>& edges) {
+//         if (edges.size() != n - 1)
+//             return false;
+
+//         vector<int> parent(n);
+
+//         // Initially, each node is its own parent (representing separate sets)
+//         for (int i = 0; i < n; i++)
+//             parent[i] = i;
+
+//         for (auto& e : edges) {
+//             // Find the root parents of the two nodes
+//             int p1 = find(e[0], parent);
+//             int p2 = find(e[1], parent);
+
+//             // If both nodes have the same root parent, it means they are already connected, so adding this edge would create a cycle
+//             if (p1 == p2)
+//                 return false;
+
+//             // Union the two sets by connecting their root parents
+//             parent[p1] = p2;
+//         }
+
+//         return true;
+//     }
+// };
+
 int main() {
     int n = 5;
     vector<vector<int>> edges = {{0, 1}, {0, 2}, {0, 3}, {1, 4}};
