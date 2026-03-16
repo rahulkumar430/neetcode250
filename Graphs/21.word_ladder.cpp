@@ -278,8 +278,7 @@ int main() {
     vector<string> wordList = {"bat", "bag", "sag", "dag", "dot"};
 
     Solution sol;
-    int result = sol.ladderLength(beginWord, endWord, wordList);
-    cout << result << endl;
+    cout << sol.ladderLength(beginWord, endWord, wordList) << endl;
 
     return 0;
 }

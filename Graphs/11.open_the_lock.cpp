@@ -57,7 +57,7 @@ class Solution {
     //     return -1;
     // }
 
-    // Bi-directional BFS Approach
+    // Bidirectional BFS Approach
     // Time Complexity: O(d^(n/2)), Space Complexity: O(d^(n/2)), d = number of digits(10), n = number of wheels(4)
     int openLock(vector<string>& deadends, string target) {
         unordered_set<string> deadSet(deadends.begin(), deadends.end());
