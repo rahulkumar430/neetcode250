@@ -13,7 +13,7 @@ int guess(int num) {
 
 class Solution {
    public:
-    // Brute-force approach - Time Complexity: O(N)
+    // Brute-force approach - Time Complexity: O(N), Space Complexity : O(1)
     // int guessNumber(int n) {
     //     // Try every number from 1 to n
     //     for (int num = 1; num <= n; num++) {
@@ -30,7 +30,7 @@ class Solution {
     //     return n;
     // }
 
-    // Binary Search - Time Complexity: O(log N)
+    // Binary Search - Time Complexity: O(log N), Space Complexity : O(1)
     int guessNumber(int n) {
         int l = 1;
         int r = n;

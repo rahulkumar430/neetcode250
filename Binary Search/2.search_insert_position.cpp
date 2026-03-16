@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute force approach - Time Complexity : O(N)
+    // Brute force approach - Time Complexity : O(N), Space Complexity : O(1)
     // int searchInsert(vector<int>& nums, int target) {
     //     // Traverse the array from left to right
     //     for (int i = 0; i < nums.size(); i++) {
@@ -19,7 +19,7 @@ class Solution {
     //     return nums.size();
     // }
 
-    // Optimal approach -> Using Binary Search - Time Complexity : O(logN)
+    // Optimal approach -> Using Binary Search - Time Complexity : O(logN), Space Complexity : O(1)
     int searchInsert(vector<int>& nums, int target) {
         int l = 0;
         int r = nums.size() - 1;
@@ -50,7 +50,7 @@ class Solution {
 
     // Uses STL lower_bound to find the first position
     // where target can be inserted without breaking sorted order
-    // Time Complexity: O(log N)
+    // Time Complexity: O(log N), Space Complexity : O(1)
     // int searchInsert(vector<int>& nums, int target) {
     //     // lower_bound returns an iterator to the first element >= target
     //     // Subtracting begin() gives the corresponding index

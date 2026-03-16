@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal approach -> Binary Search - Time Complexity : O(logN)
+    // Optimal approach -> Binary Search - Time Complexity : O(logN), Space Complexity : O(1)
     int search(vector<int>& nums, int target) {
         int l = 0;
         int r = nums.size() - 1;
@@ -28,6 +28,15 @@ class Solution {
         }
 
         // Target not found
+        return -1;
+    }
+
+    // Using STL - Time Complexity: O(logN), Space Complexity: O(1)
+    int search(vector<int>& nums, int target) {
+        auto it = lower_bound(nums.begin(), nums.end(), target);
+        if (it != nums.end() && *it == target) {
+            return distance(nums.begin(), it);
+        }
         return -1;
     }
 };

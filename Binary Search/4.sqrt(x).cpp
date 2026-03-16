@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach - Time Complexity: O(N)
+    // Brute-force approach - Time Complexity: O(N), Space Complexity : O(1)
     // int mySqrt(int x) {
     //     // Handle edge cases
     //     if (x == 0 || x == 1)
@@ -27,7 +27,7 @@ class Solution {
     //     return x / 2;
     // }
 
-    // Optimal Binary Search Approach - Time Complexity: O(log N)
+    // Optimal Binary Search Approach - Time Complexity: O(log N), Space Complexity : O(1)
     int mySqrt(int x) {
         // Handle edge cases
         if (x == 0 || x == 1)
@@ -66,6 +66,8 @@ class Solution {
         // When the loop ends, right points to the largest value
         // whose square is <= x, which is the integer square root
         // In this case, we don't have to write this line in else if case : ans = mid;
+        // right = largest valid value, left = first invalid value
+        // ... valid ... right | left ... invalid ...
         // return right;
     }
 };
@@ -78,3 +80,11 @@ int main() {
 
     return 0;
 }
+
+/*
+For binary search of largest value satisfying condition:
+return right;
+
+For binary search of smallest value satisfying condition:
+return left;
+*/
