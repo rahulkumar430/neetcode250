@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal Solution using binary search - Time Complexity: O(log N)
+    // Optimal Solution using binary search - Time Complexity: O(log N), Space Complexity: O(1)
     bool search(vector<int>& nums, int target) {
         int l = 0;
         int r = nums.size() - 1;

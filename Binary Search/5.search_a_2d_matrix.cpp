@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach - Time Complexity: O(m * n)
+    // Brute-force approach - Time Complexity: O(m * n), Space Complexity: O(1)
     // bool searchMatrix(vector<vector<int>>& matrix, int target) {
     //     int m = matrix.size();     // number of rows
     //     int n = matrix[0].size();  // number of columns
@@ -23,7 +23,7 @@ class Solution {
     //     return false;
     // }
 
-    // Staircase Search - Time Complexity: O(m + n)
+    // Staircase Search - Time Complexity: O(m + n), Space Complexity: O(1)
     // bool searchMatrix(vector<vector<int>>& matrix, int target) {
     //     int m = matrix.size();
     //     int n = matrix[0].size();
@@ -54,7 +54,7 @@ class Solution {
     // }
 
     // Optimised Two-step Binary approach
-    // Time Complexity: O(log m + log n)(which reduces to O(log(m * n)))
+    // Time Complexity: O(log m + log n)(which reduces to O(log(m * n))), Space Complexity: O(1)
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int m = matrix.size();     // number of rows
         int n = matrix[0].size();  // number of columns
@@ -112,9 +112,9 @@ class Solution {
         return false;
     }
 
-    // Binary Search by treating the 2D matrix as a flattened 1D sorted array
+    // Binary Search by treating the 2D matrix as a flattened 1D sorted array, Space Complexity: O(1)
     // matrix is sorted row-wise and each row is sorted left-to-right, the entire matrix behaves like one big sorted array.
-    // Time Complexity: O(log(m * n))
+    // Time Complexity: O(log(m * n)), Space Complexity: O(1)
     // bool searchMatrix(vector<vector<int>>& matrix, int target) {
     //     int m = matrix.size();
     //     int n = matrix[0].size();

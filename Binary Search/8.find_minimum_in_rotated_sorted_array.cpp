@@ -3,7 +3,12 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal Solution using binary search - Time Complexity: O(log N)
+    // Brute force approach - Time Complexity: O(N), Space Complexity: O(1)
+    // int findMin(vector<int>& nums) {
+    //     return *min_element(nums.begin(), nums.end());
+    // }
+
+    // Optimal Solution using binary search - Time Complexity: O(log N), Space Complexity: O(1)
     int findMin(vector<int>& nums) {
         int l = 0;
         int r = nums.size() - 1;

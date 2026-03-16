@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
    public:
     // Brute-force approach
-    // Time Complexity: O(N * max(piles))
+    // Time Complexity: O(N * max(piles)), Space Complexity: O(1)
     // int minEatingSpeed(vector<int>& piles, int h) {
     //     int speed = 1;
     //     // Try every possible eating speed
@@ -30,7 +30,7 @@ class Solution {
     // }
 
     // Binary Search on answer (eating speed)
-    // Time Complexity: O(N * log(max(piles)))
+    // Time Complexity: O(N * log(max(piles))), Space Complexity: O(1)
     int minEatingSpeed(vector<int>& piles, int h) {
         // Minimum possible speed is 1 (cannot eat 0 bananas/hour)
         int l = 1;

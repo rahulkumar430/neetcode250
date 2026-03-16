@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
    public:
     // Brute-force approach
-    // Time Complexity: O(N * sum(weights))
+    // Time Complexity: O(N * sum(weights)), Space Complexity: O(1)
     // int shipWithinDays(vector<int>& weights, int days) {
     //     int capacity = *max_element(weights.begin(), weights.end());
 
@@ -31,7 +31,7 @@ class Solution {
     // }
 
     // Binary Search on answer
-    // Time Complexity: O(N * log(sum(weights)))
+    // Time Complexity: O(N * log(sum(weights))), Space Complexity: O(1)
     int shipWithinDays(vector<int>& weights, int days) {
         // Minimum capacity must be at least the heaviest package
         int left = *max_element(weights.begin(), weights.end());

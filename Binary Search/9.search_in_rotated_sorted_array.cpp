@@ -3,7 +3,17 @@ using namespace std;
 
 class Solution {
    public:
-    // Optimal Solution using binary search - Time Complexity: O(log N)
+    // Brute force approach - Time Complexity: O(N), Space Complexity: O(1)
+    // int search(vector<int>& nums, int target) {
+    //     for (int i = 0; i < nums.size(); i++) {
+    //         if (nums[i] == target) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    // Optimal Solution using binary search - Time Complexity: O(log N), Space Complexity: O(1)
     int search(vector<int>& nums, int target) {
         int l = 0;
         int r = nums.size() - 1;

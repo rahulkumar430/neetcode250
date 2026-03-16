@@ -5,7 +5,7 @@ class Solution {
    public:
     // Optimised Binary search Approach
     // Search space size = sum(nums)−max(nums)≈sum(nums) → O(log(sum(nums)))
-    // Total Time Complexity : O(N * log(sum(nums)))
+    // Total Time Complexity : O(N * log(sum(nums))), Space Complexity: O(1)
     int splitArray(vector<int>& nums, int k) {
         int l = *max_element(nums.begin(), nums.end());
         int r = accumulate(nums.begin(), nums.end(), 0);

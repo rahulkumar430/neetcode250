@@ -3,9 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Brute-force approach
-    // Time Complexity: O((m + n) log(m + n))
-    // Space Complexity: O(m + n)
+    // Brute-force approach - Time Complexity: O((m + n) log(m + n)), Space Complexity: O(m + n)
     // double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     //     int len1 = nums1.size();
     //     int len2 = nums2.size();
@@ -34,9 +32,7 @@ class Solution {
     //     }
     // }
 
-    // Merge-based approach using 2 pointers
-    // Time Complexity: O(m + n)
-    // Space Complexity: O(1)
+    // Merge-based approach using 2 pointers - Time Complexity: O(m + n), Space Complexity: O(1)
     // double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     //     int len1 = nums1.size(), len2 = nums2.size();
 
@@ -84,27 +80,22 @@ class Solution {
     //     }
     // }
 
-    // Optimised binary search solution
-    // Time Complexity : O(log(m+n)) Space Comlexity: O(1)
+    // Optimised binary search solution - Time Complexity : O(log(m+n)), Space Comlexity: O(1)
+    // The algorithm repeatedly eliminates half of the remaining search space by comparing the k/2-th elements of both arrays.
+    // k → k/2 → k/4 → k/8 ...
     //     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     //         // Positions of median elements (handles both odd and even length)
     //         int left = (nums1.size() + nums2.size() + 1) / 2;
     //         int right = (nums1.size() + nums2.size() + 2) / 2;
 
     //         // Median is the average of left-th and right-th smallest elements
-    //         return (getKth(nums1, nums1.size(),
-    //                        nums2, nums2.size(),
-    //                        left, 0, 0) +
-    //                 getKth(nums1, nums1.size(),
-    //                        nums2, nums2.size(),
-    //                        right, 0, 0)) /
+    //         return (getKth(nums1, nums1.size(), nums2, nums2.size(), left, 0, 0) +
+    //                 getKth(nums1, nums1.size(), nums2, nums2.size(), right, 0, 0)) /
     //                2.0;
     //     }
 
     //    private:
-    //     int getKth(vector<int>& a, int m,
-    //                vector<int>& b, int n,
-    //                int k, int aStart, int bStart) {
+    //     int getKth(vector<int>& a, int m, vector<int>& b, int n, int k, int aStart, int bStart) {
     //         // Ensure array 'a' is the smaller one to simplify logic
     //         if (m > n) {
     //             return getKth(b, n, a, m, k, bStart, aStart);
@@ -122,27 +113,24 @@ class Solution {
     //         }
 
     //         // Compare the k/2-th elements of both arrays
+    //         // Why use min : to avoid out-of-bounds error in case of only 1 element in the array
     //         int i = min(m, k / 2);
     //         int j = min(n, k / 2);
 
-    //         // If a's k/2-th element is larger,
-    //         // discard first j elements of b
+    //         // If a's k/2-th element is larger, discard first j elements of b
     //         if (a[aStart + i - 1] > b[bStart + j - 1]) {
-    //             return getKth(a, m,
-    //                           b, n - j,
-    //                           k - j,
-    //                           aStart, bStart + j);
+    //             return getKth(a, m, b, n - j, k - j, aStart, bStart + j);
     //         }
     //         // Otherwise, discard first i elements of a
     //         else {
-    //             return getKth(a, m - i,
-    //                           b, n,
-    //                           k - i,
-    //                           aStart + i, bStart);
+    //             return getKth(a, m - i, b, n, k - i, aStart + i, bStart);
     //         }
     //     }
 
-    // Most Optimal binary seach solution
+   public:
+    // Most Optimal binary seach solution by searching for the correct partition position
+    // Find a partition where left half of both arrays contains exactly half the elements
+    // and all left elements ≤ right elements.
     // Time Complexity : O(log(min(m, n))) Space Comlexity: O(1)
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         // Ensure nums1 is the smaller array
@@ -155,10 +143,12 @@ class Solution {
         int low = 0, high = m;
 
         while (low <= high) {
-            // Partition index for nums1
+            // We want the left partition's total count to be exactly half of all elements, or half+1 when total is odd.
+            //  Partition index for nums1 : number of elements taken from nums1 in the left partition
             int i = (low + high) / 2;
 
-            // Partition index for nums2
+            // Partition index for nums2 : number of elements taken from nums2 in the left partition
+            // i + j = (m + n + 1) / 2 => j = (m + n + 1) / 2 - i (in case of even)
             int j = (m + n + 1) / 2 - i;
 
             // Boundary elements around the partition
@@ -168,24 +158,24 @@ class Solution {
             int maxLeftB = (j == 0) ? INT_MIN : nums2[j - 1];
             int minRightB = (j == n) ? INT_MAX : nums2[j];
 
-            // Correct partition found
+            // Correct partition found : Left half ≤ Right half
             if (maxLeftA <= minRightB && maxLeftB <= minRightA) {
                 // If total length is even
                 if ((m + n) % 2 == 0) {
-                    return (max(maxLeftA, maxLeftB) +
-                            min(minRightA, minRightB)) /
-                           2.0;
+                    return (max(maxLeftA, maxLeftB) + min(minRightA, minRightB)) / 2.0;
                 }
                 // If total length is odd
                 else {
                     return max(maxLeftA, maxLeftB);
                 }
             }
-            // Move partition left in nums1
+            // If maxLeftA > minRightB, it means the left partition of nums1 is too large,
+            // so we need to move the partition to the left in nums1.
             else if (maxLeftA > minRightB) {
                 high = i - 1;
             }
-            // Move partition right in nums1
+            // If maxLeftA <= minRightB, it means the left partition of nums1 is too small,
+            // so we need to move the partition to the right in nums1.
             else {
                 low = i + 1;
             }

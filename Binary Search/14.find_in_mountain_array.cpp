@@ -45,8 +45,7 @@ class Solution {
         while (l < r) {
             int mid = l + (r - l) / 2;
 
-            // If mid element is less than next,
-            // peak lies on the right side
+            // If mid element is less than next, then peak lies on the right side
             if (mountainArr.get(mid) < mountainArr.get(mid + 1)) {
                 l = mid + 1;
             }
