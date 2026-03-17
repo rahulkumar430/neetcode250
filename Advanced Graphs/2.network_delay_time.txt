@@ -1,0 +1,48 @@
+Network Delay Time
+
+Difficulty Level : MEDIUM
+
+You are given a network of n directed nodes, labeled from 1 to n. You are also given times, a list of directed edges where times[i] = (ui, vi, ti).
+
+ui is the source node (an integer from 1 to n)
+vi is the target node (an integer from 1 to n)
+ti is the time it takes for a signal to travel from the source to the target node (an integer greater than or equal to 0).
+You are also given an integer k, representing the node that we will send a signal from.
+
+Return the minimum time it takes for all of the n nodes to receive the signal. If it is impossible for all the nodes to receive the signal, return -1 instead.
+
+Example 1:
+
+https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/ba9b9be8-b888-45d6-627a-e719d1ac4e00/public
+
+Input: times = [[1,2,1],[2,3,1],[1,4,4],[3,4,1]], n = 4, k = 1
+
+Output: 3
+Example 2:
+
+Input: times = [[1,2,1],[2,3,1]], n = 3, k = 2
+
+Output: -1
+Constraints:
+
+1 <= k <= n <= 100
+1 <= times.length <= 1000
+
+
+Topics
+Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path
+
+Recommended Time & Space Complexity
+You should aim for a solution as good or better than O(ElogV) time and O(V + E) space, where E is the number of edges and V is the number of vertices (nodes).
+
+
+Hint 1
+As we are given the source node and we need to find the minimum time to reach all nodes, this represents the shortest path from the source node to all nodes. Can you think of a standard algorithm to find the shortest path from a source to a destination? Maybe a heap-based algorithm is helpful.
+
+
+Hint 2
+We can use Dijkstra's algorithm to find the shortest path from a source to destination. We end up finding the shortest paths from the source to the nodes that we encounter in finding the destination. So, to find shortest path for all nodes from the source, we need to perform Dijkstra's algorithm until the heap in this algorithm becomes empty. How would you implement this?
+
+
+Hint 3
+We use a Min-Heap as we need to find the minimum time. We create an adjacency list for the given times (weighted edges). We also initialize an array dist[] of size n (number of nodes) which represents the distance from the source to all nodes, initialized with infinity. We put dist[source] = 0. Then we continue the algorithm. After the heap becomes empty, if we don't visit any node, we return -1; otherwise, we return the time.
