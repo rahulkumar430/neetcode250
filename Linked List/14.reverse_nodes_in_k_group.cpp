@@ -25,7 +25,7 @@ class Solution {
     }
 
    public:
-    // Brute force approach - Time & Space Complexity: O(N)
+    // Brute force approach - Time Complexity: O(N), Space Complexity: O(N)
     // ListNode* reverseKGroup(ListNode* head, int k) {
     //     vector<int> v;
     //     ListNode* temp = head;

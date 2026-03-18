@@ -25,12 +25,12 @@ class Solution {
     }
     // Time Complexity: O(N), Space Complexity: O(1)
     void reorderList(ListNode* head) {
-        // ---------- Edge cases ----------
+        // Edge cases
         if (!head || !head->next || !head->next->next) {
             return;
         }
 
-        // ---------- 1. Find middle using slow & fast ----------
+        // 1. Find middle using slow & fast
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -41,14 +41,14 @@ class Solution {
             fast = fast->next->next;
         }
 
-        // ---------- 2. Split the list ----------
+        // 2. Split the list
         ListNode* secondHalf = slow->next;
         slow->next = nullptr;  // terminate first half
 
-        // ---------- 3. Reverse the second half ----------
+        // 3. Reverse the second half
         secondHalf = reverseList(secondHalf);
 
-        // ---------- 4. Merge both halves alternately ----------
+        // 4. Merge both halves alternately
         ListNode* first = head;
         ListNode* second = secondHalf;
 
@@ -67,12 +67,12 @@ class Solution {
     // Recursive helper
     // - right moves to the end via recursion
     // - left moves forward during unwinding (passed by reference)
-    // void reorderHelper(ListNode* right, ListNode*& left) {
+    // void reorderHelper(ListNode*& left, ListNode* right) {
     //     // Base case 1: reach end of list (downward phase stop)
     //     if (right == nullptr) return;
 
     //     // Go to the end first
-    //     reorderHelper(right->next, left);
+    //     reorderHelper(left, right->next);
 
     //     // Base case 2: reordering already finished
     //     if (left == nullptr) return;
@@ -103,9 +103,10 @@ class Solution {
     //     ListNode* left = head;
 
     //     // Start recursion with right at head
-    //     reorderHelper(head, left);
+    //     reorderHelper(left, head);
     // }
 };
+
 // Helper function to print the list
 ListNode* arrayToList(int arr[], int n) {
     // If array is empty, return null

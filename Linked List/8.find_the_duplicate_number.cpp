@@ -3,8 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Sorting Approach
-    // Time: O(N log N), Space: O(1)
+    // Sorting Approach - Time Complexity: O(N log N), Space Complexity: O(1)
     // int findDuplicate(vector<int>& nums) {
     //     sort(nums.begin(), nums.end());
 
@@ -16,8 +15,7 @@ class Solution {
     //     return -1;
     // }
 
-    // HashSet Approach
-    // Time: O(N), Space: O(N)
+    // HashSet Approach - Time Complexity: O(N), Space Complexity: O(N)
     // int findDuplicate(vector<int>& nums) {
     //     unordered_set<int> seen;
 
@@ -28,8 +26,7 @@ class Solution {
     //     return -1;
     // }
 
-    // Bit Manipulation Approach
-    // Time: O(N log N), Space: O(1)
+    // Bit Manipulation Approach - Time Complexity: O(N log N), Space Complexity: O(1)
     // int findDuplicate(vector<int>& nums) {
     //     int n = nums.size() - 1;
     //     int duplicate = 0;
@@ -56,8 +53,9 @@ class Solution {
     //     return duplicate;
     // }
 
-    /**
+    /*
      * Floyd's Cycle Detection (Fast & Slow Pointer like in linked list) - Most Optimal Solution
+     * Time Complexity: O(N), Space Complexity: O(1)
      * Key idea:
      * - Treat the array as a linked list where:
      *     next index = nums[current]
@@ -71,9 +69,6 @@ class Solution {
      * Example: nums = {1, 3, 4, 2, 2}
      * 0 → 1 → 3 → 2 → 4 → 2 (cycle detected)
      * we are hopping by nums[value] inside
-     *
-     * Time Complexity: O(N)
-     * Space Complexity: O(1)
      */
 
     int findDuplicate(vector<int>& nums) {

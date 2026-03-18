@@ -55,8 +55,7 @@ class Solution {
 
    public:
     // Brute force approach
-    // Time Complexity: O(N * K)
-    // Space Complexity: O(1) (excluding input/output)
+    // Time Complexity: O(N * K), Space Complexity: O(1) (excluding input/output)
     // ListNode* mergeKLists(vector<ListNode*>& lists) {
     //     if (lists.empty()) return nullptr;
 
@@ -72,8 +71,7 @@ class Solution {
     // }
 
     // Very brute-force solution using vector sort
-    // Time Complexity: O(N log N)
-    // Space Complexity: O(N)
+    // Time Complexity: O(N log N), Space Complexity: O(N)
     // ListNode* mergeKLists(vector<ListNode*>& lists) {
     //     vector<int> values;
 
@@ -104,8 +102,7 @@ class Solution {
     // }
 
     // Optimal Appraoch using Divide and Conquer Method
-    // Time: O(N log K)
-    // Space: O(log K)
+    // Time Complexity: O(N log K), Space Complexity: O(log K)
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         if (lists.empty()) return nullptr;
         return mergeRange(lists, 0, lists.size() - 1);

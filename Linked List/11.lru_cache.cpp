@@ -2,7 +2,7 @@
 using namespace std;
 
 // Brute force LRU Cache using vector
-// Time: O(N) for get and put
+// Time Complexity: O(N), Space Complexity: O(N)
 // class LRUCache {
 //    private:
 //     vector<pair<int, int>> v;  // stores (key, value) in LRU order
@@ -47,7 +47,7 @@ using namespace std;
 //     }
 // };
 
-// Using Doubly Linked List - O(1) time for all operations
+// Using Doubly Linked List - Time Complexity: O(1), Space Complexity: O(N)
 class LRUCache {
    private:
     struct ListNode {

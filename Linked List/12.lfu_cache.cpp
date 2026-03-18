@@ -2,7 +2,7 @@
 using namespace std;
 
 // Brute force LFU Cache using vector and map for use counter
-// Time: O(N) for get and put
+// Time Complexity: O(N), Space Complexity: O(N)
 // class LFUCache {
 //    private:
 //     vector<pair<int, int>> v;          // (key, value) in recency order
@@ -72,7 +72,7 @@ using namespace std;
 //     }
 // };
 
-// Using Doubly Linked List - O(1) time for all operations
+// Using Doubly Linked List - Time Complexity: O(1), Space Complexity: O(N)
 class LFUCache {
    private:
     // Node structure for doubly linked list
@@ -112,7 +112,7 @@ class LFUCache {
             size--;
         }
 
-        // Remove and return least recently used node (at front)
+        // Remove and return least recently used node (at front) so that we can delete it from the keyMap
         Node* removeLRU() {
             if (size == 0) return nullptr;
             Node* lru = head->next;
@@ -146,6 +146,7 @@ class LFUCache {
 
         // Move to next frequency list
         node->freq++;
+        // Check if new frequency list doesn't exist, create it
         if (!freqMap.count(node->freq)) {
             freqMap[node->freq] = new DLL();
         }
@@ -186,7 +187,7 @@ class LFUCache {
 };
 
 // LFU Cache using STL
-// Time Complexity: O(1) average for get and put
+// Time Complexity: O(1) average, O(N) worst case, Space Complexity: O(N)
 // class LFUCache {
 //    private:
 //     int capacity;
