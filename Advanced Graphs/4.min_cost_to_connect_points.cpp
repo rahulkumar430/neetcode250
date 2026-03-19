@@ -59,12 +59,15 @@ using namespace std;
 //     }
 // };
 
-// Kruskal's Algorithm - Greedy MST Building
+// Kruskal's Algorithm - Greedy MST Building - Union by Rank or Size(both works)
+// You can also avoid using rank by size to unite for smaller tree for ex: N < 1000 in this case
+// But for larger N, rank or size is more efficient
 // Time Complexity : O(N^2 log N) Space Complexity: O(N ^ 2)
 // class Solution {
 //    public:
 //     // DSU (Disjoint Set Union)
-//     vector<int> parent, rank;
+//     vector<int> parent, rank;  // Union By Rank
+//     // vector<int> parent, size;  // Union By Size
 
 //     // Find with path compression
 //     int find(int x) {
@@ -95,6 +98,23 @@ using namespace std;
 
 //         return true;
 //     }
+
+//     // Union by size
+//     // bool unite(int x, int y) {
+//     //     int px = find(x);
+//     //     int py = find(y);
+
+//     //     if (px == py) return false;
+
+//     //     // Attach smaller tree under bigger tree
+//     //     if (size[px] < size[py])
+//     //         swap(px, py);
+
+//     //     parent[py] = px;
+//     //     size[px] += size[py];  // increase size
+
+//     //     return true;
+//     // }
 
 //     int minCostConnectPoints(vector<vector<int>>& points) {
 //         int n = points.size();
