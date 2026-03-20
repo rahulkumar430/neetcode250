@@ -51,6 +51,7 @@ void printTree(TreeNode* root) {
 }
 
 // DFS Approach - Time Complexity : O(N), Space Complexity: O(H)
+// You can use queue instead of stack, the only thing change will be space complexity to O(W)
 class Solution {
    public:
     int goodNodes(TreeNode* root) {

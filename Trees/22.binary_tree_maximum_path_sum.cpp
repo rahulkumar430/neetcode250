@@ -70,6 +70,8 @@ class Solution {
         maxSum = max(maxSum, currentPath);
 
         // Return max gain if continuing upward
+        // Can not return currentPath directly
+        // Because a node can not appear in the path sequence more than once
         return node->val + max(leftGain, rightGain);
     }
 

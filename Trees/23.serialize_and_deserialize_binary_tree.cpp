@@ -51,123 +51,123 @@ void printTree(TreeNode* root) {
 }
 
 // BFS Approach: Time Complexity : O(N), Space Complexity : O(N)
-class Codec {
-   public:
-    // Encodes a tree to a single string (BFS)
-    string serialize(TreeNode* root) {
-        if (!root) return "";
-
-        queue<TreeNode*> q;
-        q.push(root);
-
-        string result;
-
-        while (!q.empty()) {
-            TreeNode* node = q.front();
-            q.pop();
-
-            if (node) {
-                result += to_string(node->val) + ",";
-
-                // Push children even if null
-                q.push(node->left);
-                q.push(node->right);
-            } else {
-                result += "N,";  // Special marker for null
-            }
-        }
-
-        return result;
-    }
-
-    // Decodes your encoded data to tree
-    TreeNode* deserialize(string data) {
-        if (data.empty()) return nullptr;
-
-        stringstream ss(data);
-        string value;
-
-        // First value is root
-        getline(ss, value, ',');
-        TreeNode* root = new TreeNode(stoi(value));
-
-        queue<TreeNode*> q;
-        q.push(root);
-
-        while (!q.empty()) {
-            TreeNode* node = q.front();
-            q.pop();
-
-            // Process left child
-            if (getline(ss, value, ',')) {
-                if (value != "N") {
-                    node->left = new TreeNode(stoi(value));
-                    q.push(node->left);
-                }
-            }
-
-            // Process right child
-            if (getline(ss, value, ',')) {
-                if (value != "N") {
-                    node->right = new TreeNode(stoi(value));
-                    q.push(node->right);
-                }
-            }
-        }
-
-        return root;
-    }
-};
-
-// DFS Approach: Time Complexity : O(N), Space Complexity : O(H)
 // class Codec {
 //    public:
-//     // Serialize using preorder DFS
+//     // Encodes a tree to a single string (BFS)
 //     string serialize(TreeNode* root) {
+//         if (!root) return "";
+
+//         queue<TreeNode*> q;
+//         q.push(root);
+
 //         string result;
-//         dfsSerialize(root, result);
+
+//         while (!q.empty()) {
+//             TreeNode* node = q.front();
+//             q.pop();
+
+//             if (node) {
+//                 result += to_string(node->val) + ",";
+
+//                 // Push children even if null
+//                 q.push(node->left);
+//                 q.push(node->right);
+//             } else {
+//                 result += "N,";  // Special marker for null
+//             }
+//         }
+
 //         return result;
 //     }
 
-//     void dfsSerialize(TreeNode* node, string& result) {
-//         if (!node) {
-//             result += "N,";
-//             return;
+//     // Decodes your encoded data to tree
+//     TreeNode* deserialize(string data) {
+//         if (data.empty()) return nullptr;
+
+//         stringstream ss(data);
+//         string value;
+
+//         // First value is root
+//         getline(ss, value, ',');
+//         TreeNode* root = new TreeNode(stoi(value));
+
+//         queue<TreeNode*> q;
+//         q.push(root);
+
+//         while (!q.empty()) {
+//             TreeNode* node = q.front();
+//             q.pop();
+
+//             // Process left child
+//             if (getline(ss, value, ',')) {
+//                 if (value != "N") {
+//                     node->left = new TreeNode(stoi(value));
+//                     q.push(node->left);
+//                 }
+//             }
+
+//             // Process right child
+//             if (getline(ss, value, ',')) {
+//                 if (value != "N") {
+//                     node->right = new TreeNode(stoi(value));
+//                     q.push(node->right);
+//                 }
+//             }
 //         }
 
-//         // Add current node value
-//         result += to_string(node->val) + ",";
-
-//         // Recurse left then right
-//         dfsSerialize(node->left, result);
-//         dfsSerialize(node->right, result);
-//     }
-
-//     // Deserialize using preorder DFS
-//     TreeNode* deserialize(string data) {
-//         stringstream ss(data);
-//         return dfsDeserialize(ss);
-//     }
-
-//     TreeNode* dfsDeserialize(stringstream& ss) {
-//         string value;
-//         getline(ss, value, ',');
-
-//         if (value == "N")
-//             return nullptr;
-
-//         // Create node
-//         TreeNode* node = new TreeNode(stoi(value));
-
-//         // Build left subtree
-//         node->left = dfsDeserialize(ss);
-
-//         // Build right subtree
-//         node->right = dfsDeserialize(ss);
-
-//         return node;
+//         return root;
 //     }
 // };
+
+// DFS Approach: Time Complexity : O(N), Space Complexity : O(H)
+class Codec {
+   public:
+    // Serialize using preorder DFS
+    string serialize(TreeNode* root) {
+        string result;
+        dfsSerialize(root, result);
+        return result;
+    }
+
+    void dfsSerialize(TreeNode* node, string& result) {
+        if (!node) {
+            result += "N,";
+            return;
+        }
+
+        // Add current node value
+        result += to_string(node->val) + ",";
+
+        // Recurse left then right
+        dfsSerialize(node->left, result);
+        dfsSerialize(node->right, result);
+    }
+
+    // Deserialize using preorder DFS
+    TreeNode* deserialize(string data) {
+        stringstream ss(data);
+        return dfsDeserialize(ss);
+    }
+
+    TreeNode* dfsDeserialize(stringstream& ss) {
+        string value;
+        getline(ss, value, ',');
+
+        if (value == "N")
+            return nullptr;
+
+        // Create node
+        TreeNode* node = new TreeNode(stoi(value));
+
+        // Build left subtree
+        node->left = dfsDeserialize(ss);
+
+        // Build right subtree
+        node->right = dfsDeserialize(ss);
+
+        return node;
+    }
+};
 
 int main() {
     vector<int> input = {1, 2, 3, INT_MIN, INT_MIN, 4, 5};

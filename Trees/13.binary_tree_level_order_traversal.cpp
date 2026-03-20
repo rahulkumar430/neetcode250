@@ -52,7 +52,7 @@ void printTree(TreeNode* root) {
 
 class Solution {
    public:
-    // Iterative BFS Approach - Time & Space Complexity: O(N)
+    // Iterative BFS Approach - Time Complexity: O(N), Space Complexity: O(N)
     vector<vector<int>> levelOrder(TreeNode* root) {
         if (!root) return {};
 

@@ -80,7 +80,7 @@ void printTree(TreeNode* root) {
 //     }
 // };
 
-// DP + Memoization Approach  - Time Complexity : O(N), Space Complexity : O(N)
+// Top Down DP + Memoization Approach  - Time Complexity : O(N), Space Complexity : O(N)
 // class Solution {
 //    private:
 //     // Memoization map
@@ -140,8 +140,7 @@ class Solution {
 
         // If we skip this node:
         // we can choose best of rob or skip from children
-        int skipThis = max(left.first, left.second) +
-                       max(right.first, right.second);
+        int skipThis = max(left.first, left.second) + max(right.first, right.second);
 
         return {robThis, skipThis};
     }
