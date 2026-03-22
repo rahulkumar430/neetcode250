@@ -25,15 +25,15 @@ class Solution {
 
     // Kruskal helper : Build MST with optional skip / pick
     int kruskal(int n, vector<vector<int>>& edges, int skipEdge, int pickEdge) {
+        // Step 1: Initialize DSU
         parent.resize(n);
-
         for (int i = 0; i < n; i++)
             parent[i] = i;
 
         int cost = 0;
         int edgesUsed = 0;
 
-        // Force include an edge first (for pseudo-critical check)
+        // Step 2: Force include an edge first (for pseudo-critical check)
         if (pickEdge != -1) {
             auto& e = edges[pickEdge];
             if (unite(e[0], e[1])) {
@@ -44,10 +44,12 @@ class Solution {
 
         // Normal Kruskal
         for (int i = 0; i < edges.size(); i++) {
+            // Skip this edge (critical test)
             if (i == skipEdge) continue;
 
             auto& e = edges[i];
 
+            // Skip this edge (critical test)
             if (unite(e[0], e[1])) {
                 cost += e[2];
                 edgesUsed++;
@@ -77,11 +79,11 @@ class Solution {
 
         // Step 2: check each edge
         for (int i = 0; i < edges.size(); i++) {
-            // Check critical
+            // Check critical - if removing that edge increases cost
             if (kruskal(n, edges, i, -1) > base) {
                 critical.push_back(edges[i][3]);
             }
-            // Check pseudo-critical
+            // Check pseudo-critical - if removing that edge does not increase cost
             else if (kruskal(n, edges, -1, i) == base) {
                 pseudo.push_back(edges[i][3]);
             }
