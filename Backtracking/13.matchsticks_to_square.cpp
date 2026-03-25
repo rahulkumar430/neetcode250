@@ -63,68 +63,119 @@ using namespace std;
 
 // More Optimised Backtracking Approach
 // Time Complexity: O(n * 2^n), Space Complexity: O(n)
+// class Solution {
+//    private:
+//     vector<bool> used;  // Tracks which sticks are already used
+//     int target;         // Required length for each side
+
+//     bool backtrack(vector<int>& matchsticks,
+//                    int k,           // Remaining sides to build
+//                    int currentSum,  // Current side length being built
+//                    int start) {     // Start index for choosing sticks
+
+//         // If all 4 sides are successfully built
+//         if (k == 0)
+//             return true;
+
+//         // If current side reached target, start building next side
+//         if (currentSum == target)
+//             return backtrack(matchsticks, k - 1, 0, 0);
+
+//         for (int i = start; i < matchsticks.size(); i++) {
+//             // Skip if already used OR exceeds side length
+//             if (used[i] || currentSum + matchsticks[i] > target)
+//                 continue;
+
+//             // Choose this stick
+//             used[i] = true;
+
+//             // Continue building current side
+//             if (backtrack(matchsticks, k, currentSum + matchsticks[i], i + 1))
+//                 return true;
+
+//             // Undo choice
+//             used[i] = false;
+
+//             // Pruning:
+//             // If we tried starting a new side and it failed,
+//             // no need to try other sticks at same level
+//             if (currentSum == 0)
+//                 return false;
+//         }
+
+//         return false;
+//     }
+
+//    public:
+//     bool makesquare(vector<int>& matchsticks) {
+//         int total = accumulate(matchsticks.begin(), matchsticks.end(), 0);
+
+//         // Total must be divisible by 4
+//         if (total % 4 != 0)
+//             return false;
+
+//         target = total / 4;
+
+//         // Sort descending → larger sticks placed first (faster pruning)
+//         sort(matchsticks.rbegin(), matchsticks.rend());
+
+//         // If largest stick > target → impossible
+//         if (matchsticks[0] > target)
+//             return false;
+
+//         used.assign(matchsticks.size(), false);
+
+//         return backtrack(matchsticks, 4, 0, 0);
+//     }
+// };
+
+// Optimised Backtracking Approach
+// Time Complexity: O(n * 2^n), Space Complexity: O(n)
 class Solution {
    private:
-    vector<bool> used;  // Tracks which sticks are already used
-    int target;         // Required length for each side
+    vector<bool> used;
+    int target;
 
-    bool backtrack(vector<int>& matchsticks,
-                   int k,           // Remaining sides to build
-                   int currentSum,  // Current side length being built
-                   int start) {     // Start index for choosing sticks
+    bool backtrack(vector<int>& matchsticks, int k, int currentSum, int i) {
+        // All 4 sides built successfully
+        if (k == 0) return true;
 
-        // If all 4 sides are successfully built
-        if (k == 0)
-            return true;
-
-        // If current side reached target, start building next side
+        // Current side complete → start building next side from index 0
         if (currentSum == target)
             return backtrack(matchsticks, k - 1, 0, 0);
 
-        for (int i = start; i < matchsticks.size(); i++) {
-            // Skip if already used OR exceeds side length
-            if (used[i] || currentSum + matchsticks[i] > target)
-                continue;
+        // Exhausted all sticks without completing this side
+        if (i == matchsticks.size()) return false;
 
-            // Choose this stick
+        // Place stick i into current side
+        if (!used[i] && currentSum + matchsticks[i] <= target) {
             used[i] = true;
-
-            // Continue building current side
             if (backtrack(matchsticks, k, currentSum + matchsticks[i], i + 1))
                 return true;
 
             // Undo choice
             used[i] = false;
 
-            // Pruning:
-            // If we tried starting a new side and it failed,
-            // no need to try other sticks at same level
-            if (currentSum == 0)
-                return false;
+            // Pruning: if placing as the FIRST stick of a new side failed,
+            // skipping to try other first-sticks is pointless (symmetry)
+            if (currentSum == 0) return false;
         }
 
-        return false;
+        // Skip stick i - Backtrack
+        return backtrack(matchsticks, k, currentSum, i + 1);
     }
 
    public:
     bool makesquare(vector<int>& matchsticks) {
         int total = accumulate(matchsticks.begin(), matchsticks.end(), 0);
-
-        // Total must be divisible by 4
-        if (total % 4 != 0)
-            return false;
+        if (total % 4 != 0) return false;
 
         target = total / 4;
-
-        // Sort descending → larger sticks placed first (faster pruning)
         sort(matchsticks.rbegin(), matchsticks.rend());
 
-        // If largest stick > target → impossible
-        if (matchsticks[0] > target)
-            return false;
+        if (matchsticks[0] > target) return false;
 
         used.assign(matchsticks.size(), false);
-
         return backtrack(matchsticks, 4, 0, 0);
     }
 };

@@ -163,7 +163,7 @@ class Solution {
     }
 };
 
-// Bitmask Solution, replacing hash set with binary bitmask, but fatser than other approaches
+// Bitmask Solution, replacing hash set with binary bitmask, but faster than other approaches
 // Time Complexity: O(N!), Space Complexity: O(N^2)
 // class Solution {
 //    private:

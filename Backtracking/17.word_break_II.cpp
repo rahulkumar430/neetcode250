@@ -7,7 +7,7 @@ using namespace std;
 //    private:
 //     vector<string> result;
 
-//     void backtrack(int start, string& s, unordered_set<string>& dict, string current) {
+//     void recursion(int start, string& s, unordered_set<string>& dict, string current) {
 //         // Base case: reached end of string
 //         if (start == s.length()) {
 //             // remove trailing space
@@ -23,7 +23,7 @@ using namespace std;
 //             // If substring exists in dictionary
 //             if (dict.count(word)) {
 //                 // Choose
-//                 backtrack(end + 1, s, dict, current + word + " ");
+//                 recursion(end + 1, s, dict, current + word + " ");
 
 //                 // No need to manually undo because current is passed by value
 //             }
@@ -34,7 +34,7 @@ using namespace std;
 //     vector<string> wordBreak(string s, vector<string>& wordDict) {
 //         unordered_set<string> dict(wordDict.begin(), wordDict.end());
 
-//         backtrack(0, s, dict, "");
+//         recursion(0, s, dict, "");
 
 //         return result;
 //     }
@@ -113,6 +113,7 @@ class Solution {
             string word = s.substr(start, end - start + 1);
 
             if (dict.count(word)) {
+                // Start of recursion
                 vector<string> subSentences = dfs(end + 1, s, dict);
 
                 for (string sub : subSentences) {

@@ -69,47 +69,107 @@ using namespace std;
 
 // More Optimised Backtracking Approach
 // Time Complexity: O(k * 2^n), Space Complexity: O(n)
+// class Solution {
+//    private:
+//     vector<bool> used;  // Tracks which elements are already used
+//     int target;         // Required sum for each subset
+
+//     bool backtrack(vector<int>& nums,  // input array
+//                    int k,              // remaining subsets to build
+//                    int currentSum,     // current subset sum being formed
+//                    int start) {        // index to continue choosing elements
+//         // If all k subsets are successfully built
+//         if (k == 0)
+//             return true;
+
+//         // If current subset reached target,
+//         // start building next subset
+//         if (currentSum == target)
+//             return backtrack(nums, k - 1, 0, 0);
+
+//         for (int i = start; i < nums.size(); i++) {
+//             // Skip if already used OR adding exceeds target
+//             if (used[i] || currentSum + nums[i] > target)
+//                 continue;
+
+//             // Choose element
+//             used[i] = true;
+
+//             // Continue building current subset
+//             if (backtrack(nums, k, currentSum + nums[i], i + 1))
+//                 return true;
+
+//             // Undo choice (backtrack)
+//             used[i] = false;
+
+//             // Pruning:
+//             // If starting a new subset and it fails,
+//             // no need to try other elements at this level
+//             if (currentSum == 0)
+//                 return false;
+//         }
+
+//         return false;
+//     }
+
+//    public:
+//     bool canPartitionKSubsets(vector<int>& nums, int k) {
+//         int total = accumulate(nums.begin(), nums.end(), 0);
+
+//         // Total sum must be divisible by k
+//         if (total % k != 0)
+//             return false;
+
+//         target = total / k;
+
+//         // Sort descending to place larger numbers first
+//         // (improves pruning efficiency)
+//         sort(nums.rbegin(), nums.rend());
+
+//         // If largest element exceeds target, impossible
+//         if (nums[0] > target)
+//             return false;
+
+//         used.assign(nums.size(), false);
+
+//         return backtrack(nums, k, 0, 0);
+//     }
+// };
+
+// More Optimised Backtracking Approach
+// Time Complexity: O(k * 2^n), Space Complexity: O(n)
 class Solution {
    private:
-    vector<bool> used;  // Tracks which elements are already used
-    int target;         // Required sum for each subset
+    vector<bool> used;
+    int target;
 
-    bool backtrack(vector<int>& nums,  // input array
-                   int k,              // remaining subsets to build
-                   int currentSum,     // current subset sum being formed
-                   int start) {        // index to continue choosing elements
-        // If all k subsets are successfully built
-        if (k == 0)
-            return true;
+    bool backtrack(vector<int>& nums, int k, int currentSum, int i) {
+        // All k subsets built successfully
+        if (k == 0) return true;
 
-        // If current subset reached target,
-        // start building next subset
+        // Current subset complete → start building next subset from index 0
         if (currentSum == target)
             return backtrack(nums, k - 1, 0, 0);
 
-        for (int i = start; i < nums.size(); i++) {
-            // Skip if already used OR adding exceeds target
-            if (used[i] || currentSum + nums[i] > target)
-                continue;
+        // Exhausted all elements without completing this subset
+        if (i == nums.size()) return false;
 
-            // Choose element
+        // Place element i into current subset
+        if (!used[i] && currentSum + nums[i] <= target) {
             used[i] = true;
-
-            // Continue building current subset
             if (backtrack(nums, k, currentSum + nums[i], i + 1))
                 return true;
 
-            // Undo choice (backtrack)
+            // Undo choice
             used[i] = false;
 
-            // Pruning:
-            // If starting a new subset and it fails,
-            // no need to try other elements at this level
-            if (currentSum == 0)
-                return false;
+            // Pruning: if placing as the FIRST element of a new subset failed,
+            // no point skipping ahead to try other first-elements (symmetry)
+            if (currentSum == 0) return false;
         }
 
-        return false;
+        // Skip element i - backtrack
+        return backtrack(nums, k, currentSum, i + 1);
     }
 
    public:
@@ -117,18 +177,15 @@ class Solution {
         int total = accumulate(nums.begin(), nums.end(), 0);
 
         // Total sum must be divisible by k
-        if (total % k != 0)
-            return false;
+        if (total % k != 0) return false;
 
         target = total / k;
 
-        // Sort descending to place larger numbers first
-        // (improves pruning efficiency)
+        // Sort descending → larger elements placed first (faster pruning)
         sort(nums.rbegin(), nums.rend());
 
-        // If largest element exceeds target, impossible
-        if (nums[0] > target)
-            return false;
+        // If largest element > target → impossible
+        if (nums[0] > target) return false;
 
         used.assign(nums.size(), false);
 
