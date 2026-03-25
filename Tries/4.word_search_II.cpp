@@ -71,7 +71,7 @@ using namespace std;
 //     }
 // };
 
-// Most Optimal HashSet + Trie Approach
+// Most Optimal Top-down DP + Trie Approach
 // Time Complexity: O(R * C * 4^L)
 // Space Complexity: O(W * L) + O(L), where L = length of the word, W = number of words, R = rows, C = cols
 class Solution {
