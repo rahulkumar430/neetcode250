@@ -1,0 +1,47 @@
+Partition Equal Subset Sum
+
+Difficulty Level : MEDIUM
+
+You are given an array of positive integers nums.
+
+Return true if you can partition the array into two subsets, subset1 and subset2 where sum(subset1) == sum(subset2). Otherwise, return false.
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+
+Output: true
+Explanation: The array can be partitioned as [1, 4] and [2, 3].
+
+Example 2:
+
+Input: nums = [1,2,3,4,5]
+
+Output: false
+Constraints:
+
+1 <= nums.length <= 100
+1 <= nums[i] <= 50
+
+
+Topics
+Array, Dynamic Programming
+
+Recommended Time & Space Complexity
+You should aim for a solution as good or better than O(n * t) time and O(n * t) space, where n is the size of the input array and t is half the sum of the array elements.
+
+
+Hint 1
+If the sum of the array elements is not even, we can immediately return false. Think in terms of recursion, where we try to build a subset with a sum equal to half of the total sum. If we find such a subset, the remaining elements will automatically form another subset with the same sum. The entire array can also be considered as one subset, with the other being empty. Can you visualize this as a decision tree to process the array recursively?
+
+
+Hint 2
+We recursively iterate through the array with index i. At each step, we decide whether to include the current element in the subset or not. Instead of forming the subset explicitly, can you think of a better approach? Maybe you only need to track the subset sum rather than generating the subset itself.
+
+
+Hint 3
+We can track the subset sum using a variable curSum. At each step, we make two recursive calls. If adding the current element does not exceed the target, we include it. If either path leads to a solution, we immediately return true. Can you determine the base case for this recursion? All elements in the array are positive.
+
+
+Hint 4
+If curSum equals half the sum of the array elements, we return true. If index i goes out of bounds, we return false. This solution is exponential, but we can use memoization to cache recursive call results and avoid redundant computations. We can use a hash map or a 2D array with dimensions n * t, where n is the size of the input array and t is half the sum of the input array elements.
