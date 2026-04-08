@@ -23,7 +23,7 @@ class Solution {
     //     return max > 0 ? ++max : 1;
     // }
 
-    // Optimised Appraoch - Time complexity: O(n) Space complexity : O(n)
+    // Optimised Approach - Time complexity: O(n), Space complexity : O(n)
     // int firstMissingPositive(vector<int>& nums) {
     //     int n = nums.size();
 
@@ -48,7 +48,7 @@ class Solution {
     //     return n + 1;
     // }
 
-    // Cycle Sort : Time complexity: O(n) Space complexity : O(1)
+    // Cycle Sort : Time complexity: O(n), Space complexity : O(1)
     int firstMissingPositive(vector<int>& nums) {
         int n = nums.size();
 
