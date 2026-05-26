@@ -126,9 +126,11 @@ class Solution {
             }
 
             /*
-            Remove indices from the back whose values
-            are smaller than the current element.
+            Remove indices from the back whose values are smaller than the current element.
             They will never be needed again.
+
+            So smaller numbers either get removed from the back or just stay there
+            without affecting the front—the front always has the maximum for that window.
             */
             while (!dq.empty() && nums[dq.back()] < nums[i]) {
                 dq.pop_back();

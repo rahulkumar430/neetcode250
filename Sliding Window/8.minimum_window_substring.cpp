@@ -95,10 +95,7 @@ class Solution {
             // Decrease frequency for current character
             need[s[right]]--;
 
-            /*
-            When required becomes 0, the current window
-            contains all characters of t
-            */
+            // When required becomes 0, the current window contains all characters of t
             while (required == 0) {
                 // Update minimum window if smaller one is found
                 if (right - left + 1 < minLen) {
@@ -109,8 +106,7 @@ class Solution {
                 // Try to shrink the window from the left
                 need[s[left]]++;
 
-                // If removing s[left] breaks the requirement,
-                // increase required count
+                // If removing s[left] breaks the requirement, increase required count
                 if (need[s[left]] > 0) {
                     required++;
                 }
