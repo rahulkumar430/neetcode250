@@ -58,7 +58,7 @@ class Solution {
             // Find previous prefix sum that was exactly k before current sum
             // subarray_sum = curSum[i] - curSum[j] = k → curSum[j] = curSum[i] - k
             int diff = curSum - k;
-            cnt += prefixSums[diff];  // Add frequency of that prefix sum
+            cnt += prefixSums[diff];  // Add frequency of that prefix sum, if it exists, otherwise 0
 
             prefixSums[curSum]++;  // Record current prefix sum frequency
         }

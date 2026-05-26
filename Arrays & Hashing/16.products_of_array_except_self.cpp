@@ -19,7 +19,7 @@ class Solution {
     //     return ans;
     // }
 
-    // OPtimised Approach - Time Complexity: O(n), Space Complexity: O(1)
+    // Optimised Approach - Time Complexity: O(n), Space Complexity: O(n)
     // Uses LEFT-to-RIGHT (prefix) and RIGHT-to-LEFT (suffix) product passes
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
