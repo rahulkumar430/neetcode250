@@ -64,7 +64,7 @@ class Solution {
     //     return maxArea;
     // }
 
-    // Optmised approach - Time Complexity: O(N), Space Complexity: O(N)
+    // Optimised approach - Time Complexity: O(N), Space Complexity: O(N)
     // int largestRectangleArea(vector<int>& heights) {
     //     int n = heights.size();
     //     vector<int> leftLimit(n), rightLimit(n);
