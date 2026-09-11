@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printMatrix(vector<vector<int>>& matrix);
-
 class Solution {
    public:
     // Naive Iterative Approach - Time Complexity : O(N * N), Space Complexity : O(N * N)
