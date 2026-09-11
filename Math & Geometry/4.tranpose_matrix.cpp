@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
    public:
-    // Naive Iterative Approach - Time Complexity : O(M*N), Space Complexity : O(M*N)
+    // Naive Iterative Approach - Time Complexity : O(M * N), Space Complexity : O(M * N)
     vector<vector<int>> transpose(vector<vector<int>>& matrix) {
         int m = matrix.size(), n = matrix[0].size();
 
