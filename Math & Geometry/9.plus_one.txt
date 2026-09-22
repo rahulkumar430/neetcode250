@@ -1,0 +1,39 @@
+Plus One
+
+Difficulty Level : EASY
+
+You are given an integer array digits, where each digits[i] is the ith digit of a large integer. It is ordered from most significant to least significant digit, and it will not contain any leading zero.
+
+Return the digits of the given integer after incrementing it by one.
+
+Example 1:
+
+Input: digits = [1,2,3,4]
+
+Output: [1,2,3,5]
+Explanation 1234 + 1 = 1235.
+
+Example 2:
+
+Input: digits = [9,9,9]
+
+Output: [1,0,0,0]
+Constraints:
+
+1 <= digits.length <= 100
+0 <= digits[i] <= 9
+
+
+Topics
+Array, Math
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(n) time and O(n) space, where n is the size of the input array.
+
+
+Hint 1
+There are two cases when adding 1 to a number. If the rightmost digit is less than 9, we simply increment it. Otherwise, we set it to 0 and apply the same process to the preceding digit.
+
+
+Hint 2
+We iterate through the given digits from right to left using index i. If the current digit is less than 9, we increment it and return the array. Otherwise, we set the digit to 0 and continue. If the loop completes without returning, we insert 1 at the beginning of the array and return it.
