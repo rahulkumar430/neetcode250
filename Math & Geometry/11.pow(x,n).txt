@@ -1,0 +1,55 @@
+Pow(x, n)
+
+Difficulty Level : MEDIUM
+
+Pow(x, n) is a mathematical function to calculate the value of x raised to the power of n (i.e., x^n).
+
+Given a floating-point value x and an integer value n, implement the myPow(x, n) function, which calculates x raised to the power n.
+
+You may not use any built-in library functions.
+
+Example 1:
+
+Input: x = 2.00000, n = 5
+
+Output: 32.00000
+Example 2:
+
+Input: x = 1.10000, n = 10
+
+Output: 2.59374
+Example 3:
+
+Input: x = 2.00000, n = -3
+
+Output: 0.12500
+Constraints:
+
+-100.0 < x < 100.0
+-2^31 <= n <= 2^31 - 1
+n is an integer.
+Either x is not zero or n > 0.
+-10^4 <= x^n <= 10^4
+
+
+Topics
+Math, Recursion
+
+Recommended Time & Space Complexity
+You should aim for a solution as good or better than O(logn) time and O(logn) space, where n is the given integer.
+
+
+Hint 1
+A brute force approach would be to iterate linearly up to n, multiplying by x each time to find (x^n). If n is negative, return (1 / (x^n)); otherwise, return (x^n). Can you think of a better way? Maybe a recursive approach would be more efficient.
+
+
+Hint 2
+For example, to calculate 2^6, instead of multiplying 2 six times, we compute 2^3 and square the result. The same logic applies recursively to find 2^3 and further break down the multiplication. What should be the base case for this recursion? Maybe you should consider the term that cannot be further broken down.
+
+
+Hint 3
+In (x^n), if x is 0, we return 0. If n is 0, we return 1, as any number raised to the power of 0 is 1. Otherwise, we compute (x^(n/2)) recursively and square the result. If n is odd, we multiply the final result by x. What should be the logic if n is negative?
+
+
+Hint 4
+We start the recursion with the absolute value of n. After computing the result as res, we return res if n is non-negative; otherwise, we return (1 / res).
