@@ -1,0 +1,47 @@
+Single Number
+
+Difficulty Level : EASY
+
+You are given a non-empty array of integers nums. Every integer appears twice except for one.
+
+Return the integer that appears only once.
+
+You must implement a solution with O(n) runtime complexity and use only O(1) extra space.
+
+Example 1:
+
+Input: nums = [3,2,3]
+
+Output: 2
+Example 2:
+
+Input: nums = [7,6,6,7,8]
+
+Output: 8
+Constraints:
+
+1 <= nums.length <= 10000
+-10000 <= nums[i] <= 10000
+
+
+Topics
+Array, Bit Manipulation
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(n) time and O(1) space, where n is the size of the input array.
+
+
+Hint 1
+A brute force approach would iterate through the array, checking each element using a nested loop. If a duplicate is found, we continue to the next element; otherwise, the current element is the required number. This results in an O(n^2) solution. Can you think of a better way? Maybe a data structure can help detect duplicates efficiently.
+
+
+Hint 2
+We use a hash set, iterating through the array and adding elements that are not in the set while removing those that are already present. After the iteration, the required number remains in the hash set. This results in an O(n) space solution. Can you further optimize it? Maybe a bitwise operator could be useful here.
+
+
+Hint 3
+Think about the bitwise XOR ("^"). What is the result when two identical numbers are XORed?
+
+
+Hint 4
+When two identical numbers are XORed, they cancel out, resulting in zero. Since every number appears twice except for one, the XOR of the entire array gives the number that appears only once.
