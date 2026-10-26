@@ -15,7 +15,8 @@ class Solution {
     //     return cnt;
     // }
 
-    // Optimal Bitmask approach (Brian Kernighan's algorithm) : Time Complexity: O(1), Space Complexity: O(1)
+    // Optimal Bitmask approach (Brian Kernighan's algorithm)
+    // Time Complexity: O(k) in general, where (k) is the number of set bits, hence => O(1), Space Complexity: O(1)
     int hammingWeight(uint32_t n) {
         int cnt = 0;
         while (n) {
