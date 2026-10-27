@@ -1,0 +1,47 @@
+Reverse Integer
+
+Difficulty Level : MEDIUM
+
+You are given a signed 32-bit integer x.
+
+Return x after reversing each of its digits. After reversing, if x goes outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0 instead.
+
+Solve the problem without using integers that are outside the signed 32-bit integer range.
+
+Example 1:
+
+Input: x = 1234
+
+Output: 4321
+Example 2:
+
+Input: x = -1234
+
+Output: -4321
+Example 3:
+
+Input: x = 1234236467
+
+Output: 0
+Constraints:
+
+-2^31 <= x <= 2^31 - 1
+
+
+Topics
+Math
+
+Recommended Time & Space Complexity
+You should aim for a solution with O(1) time and O(1) space.
+
+
+Hint 1
+A straightforward approach would be to convert the given integer to a string, reverse it, convert it back to an integer using a long type, and return 0 if the result exceeds the integer range. Can you think of a better way?
+
+
+Hint 2
+We initially declare the result res as an int with a value of 0. We iterate through the given integer, extracting digits one by one. Before appending a digit to res, we consider multiple cases. Can you determine them? Maybe you should think about overflow.
+
+
+Hint 3
+Let MAX be the maximum positive integer and MIN be the minimum negative integer. We iterate through each digit and check for overflow before updating res. If res > MAX / 10 or res < MIN / 10, return 0. If res == MAX / 10 and the current digit is greater than MAX % 10, return 0. If res == MIN / 10 and the current digit is less than MIN % 10, return 0. Otherwise, append the digit to res and continue.
